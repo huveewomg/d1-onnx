@@ -3,12 +3,15 @@
 Input npz: pixel_values (K, 1024, 768), pixel_attention_mask (K, 1024) int32, spatial_shapes (K, 2)
 Output npz: embeds (K*256, 2048)
 """
+import os
+import os
 import sys
 
 import numpy as np
 import onnxruntime as ort
 
-VAIP = r"C:\Program Files\RyzenAI\1.8.0\voe-4.0-win_amd64\vaip_config.json"
+VAIP = os.environ.get("VAIP_CONFIG",
+                      r"C:\Program Files\RyzenAI\1.8.0\voe-4.0-win_amd64\vaip_config.json")
 
 src, dst, model = sys.argv[1], sys.argv[2], sys.argv[3]
 d = np.load(src)
