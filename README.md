@@ -131,8 +131,9 @@ Requirements: Python 3.12, `onnxruntime>=1.30`, `transformers>=5.19`; for the NP
 
 ## Observed behavior: domain-qualified counting works (anecdotal, single-image)
 
-A hands-on `try_d1.py` run against a self-made image containing **two creatures**
-(the OpenClaw lobster and the Ollama llama, together):
+A hands-on `try_d1.py` run against an image containing **two creatures** — the OpenClaw
+lobster and the Ollama llama, taken from [ollama.ac.cn](https://ollama.ac.cn/) (third-party
+asset):
 
 | Question | Answer | Confidence |
 |---|---|---|
@@ -143,7 +144,7 @@ Both answers are individually **correct**: the unqualified count is two; the
 `sea` qualifier restricts the count to the lobster (the llama is not a sea
 creature). This isn't prompt-fragility — it's the model reading a domain
 qualifier as a filter on the decision, which is precisely the behavior d1 is
-trained for. The image itself is user-made fan-art of third-party mascots, so
+trained for. The image is third-party mascots sourced from the site above, so
 it is not redistributed here; the cats demo (`assets/cats.jpg`) remains the
 reproducible built-in check.
 
