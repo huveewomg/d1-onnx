@@ -1,0 +1,36 @@
+=== 20:45:35 ===
+expected Y[0,:4] = [44034, 56307, 1876, 28655]
+FATAL after 0.0s: name 'ort' is not defined
+=== 20:45:42 ===
+expected Y[0,:4] = [44034, 56307, 1876, 28655]
+FATAL after 0.0s: name 'ort' is not defined
+=== 20:45:49 ===
+expected Y[0,:4] = [44034, 56307, 1876, 28655]
+FATAL after 0.0s: name 'ort' is not defined
+=== 20:46:37 ===
+expected Y[0,:4] = [44034, 56307, 1876, 28655]
+session created in 13.3s
+FATAL after 13.3s: [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Invalid input name: Ws
+=== 20:47:01 ===
+expected Y[0,:4] = [44034, 56307, 1876, 28655]
+session created in 5.0s
+output: (1, 32) int32 Y[0,:4]=[16130, 3059, -10028, 24815]
+partition trace (MatMulInteger/DQL):
+
+----- Preliminary Summary of WCR EP VAIML Pass ------
+VAIP commit: N/A
+Model: C:\Users\RT Wong\Desktop\Personal Project\npu-playground\tools\d1-probe\probe_matmulinteger.onnx
+Model data type: float16
+Device data type: float16
+Number of operators in the model: 1
+GOPs of the model: 0
+Number of operators supported by VAIML: 1(100.000%)
+GOPs supported by VAIML: 0.000 (-nan(ind)%)
+Number of subgraphs supported by VAIML: 0
+
+Number of identified subgraphs: 1
+Stats for identified subgraphs
+subgraph 1 (dropped) stats:
+    Operators: 1 (100.000%)
+    GOPs: 0.000(-nan(ind)%)  OPs: 0
+

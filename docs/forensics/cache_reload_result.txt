@@ -1,0 +1,6 @@
+=== run1 20:37:25 model=probe_LayerNormalization.onnx ===
+session OK in 0.4s, out (1, 1024, 768) float32
+newest cache: 0bfefdd04cfdaa7ad379ff747cc50320 rai files: ['0bfefdd04cfdaa7ad379ff747cc50320.rai']
+=== run2 20:37:43 model=probe_LayerNormalization.onnx ===
+session OK in 0.3s, out (1, 1024, 768) float32
+newest cache: 0bfefdd04cfdaa7ad379ff747cc50320 rai files: ['0bfefdd04cfdaa7ad379ff747cc50320.rai']
