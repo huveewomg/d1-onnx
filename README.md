@@ -129,6 +129,16 @@ Requirements: Python 3.12, `onnxruntime>=1.30`, `transformers>=5.19`; for the NP
    reload; others recompile silently (~50 min per process). Compile once per session.
 5. **`use_cache=False`** — LFM2's cache layer rejects probe calls on attention-only layouts.
 
+## Observed behavior (anecdotal, single-image)
+
+A prompt-sensitivity note from hands-on use (`try_d1.py`): on the same sea-creature image,
+"How many creature are there?" → `two @ 0.9529`, while "how many sea creature are there?" →
+`one @ 0.6725`. The answer distribution moves noticeably with phrasing (plural-grammar and
+domain-qualifier effects) — decisions stay stable under clean prompts, but probabilities are
+prompt-sensitive. Consistent with d1's calibration-by-prompt-design; treat thresholds
+accordingly. (Reproduction on the cats demo: "How many cats" reads `two @ 0.98`; this
+observation uses a non-redistributable user image, so it is not included in `verify/`.)
+
 ## License
 
 Model weights and this conversion are released under Liquid AI's **LFM Open License v1.0**
