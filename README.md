@@ -129,24 +129,17 @@ Requirements: Python 3.12, `onnxruntime>=1.30`, `transformers>=5.19`; for the NP
    reload; others recompile silently (~50 min per process). Compile once per session.
 5. **`use_cache=False`** — LFM2's cache layer rejects probe calls on attention-only layouts.
 
-## Observed behavior: domain-qualified counting works (anecdotal, single-image)
+## Observed behavior (from hands-on use)
 
-A hands-on `try_d1.py` run against an image containing **two creatures** — the OpenClaw
-lobster and the Ollama llama, taken from [ollama.ac.cn](https://ollama.ac.cn/) (third-party
-asset):
+Same image (lobster + llama, from [ollama.ac.cn](https://ollama.ac.cn/), not redistributed):
 
 | Question | Answer | Confidence |
 |---|---|---|
-| "How many creature are there?" | **two** | 0.9529 |
-| "How many **sea** creature are there?" | **one** | 0.6725 |
+| "How many creature are there?" | **two** | 0.95 |
+| "How many **sea** creature..." | **one** | 0.67 |
 
-Both answers are individually **correct**: the unqualified count is two; the
-`sea` qualifier restricts the count to the lobster (the llama is not a sea
-creature). This isn't prompt-fragility — it's the model reading a domain
-qualifier as a filter on the decision, which is precisely the behavior d1 is
-trained for. The image is third-party mascots sourced from the site above, so
-it is not redistributed here; the cats demo (`assets/cats.jpg`) remains the
-reproducible built-in check.
+Both right — the `sea` qualifier correctly excludes the llama from the count.
+Built-in reproducible demo: `assets/cats.jpg`.
 
 ## License
 
