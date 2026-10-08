@@ -51,7 +51,7 @@ VAIP = os.environ.get("VAIP_CONFIG",
 res = open(os.path.join(E, "minimal_matmulint_result.txt"), "a", encoding="utf-8")
 from onnx import numpy_helper
 wq = numpy_helper.to_array(t_w).astype(np.int32).reshape(K, N)
-xq = numpy_helper.to_array(t_x).astype(np.int32).reshape(1, K)
+xq = (numpy_helper.to_array(t_x).astype(np.int32) - int(numpy_helper.to_array(t_xzp).reshape(-1)[0])).reshape(1, K)  # zp-subtracted: MatMulInteger semantics
 res.write(f"=== {time.strftime('%H:%M:%S')} ===\nexpected Y[0,:4] = {(xq @ wq)[0, :4].tolist()}\n")
 
 buf = io.StringIO()
