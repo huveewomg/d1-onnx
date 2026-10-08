@@ -18,6 +18,8 @@ tags:
 
 **To our knowledge, the first execution of a d1 decision model on an AMD NPU — verified against the official checkpoint.** A parallel browser port exists: [onnx-community/d1-3B-ONNX](https://huggingface.co/onnx-community/d1-3B-ONNX) (Transformers.js/WebGPU, same readout approach, published the same week — credit to them for the browser port and the conversion methodology). On Ryzen AI NPU, the two ports behave the same way and neither reaches the DPU for the text decoder as-shipped: graphs carrying generic quantized-matmul ops (`MatMulInteger`/`MatMulNBits`) fall back to CPU, and the fp32 route hits either monolithic-graph inefficiency or, for NaFlex vision graphs, a compiler segfault — the exact issues dissected in the gating forensics below, this repo's novel contribution alongside the NPU-compiled vision graph (which resolves them by constant-folding the dynamic geometry).
 
+**In one sentence: an AMD XDNA2 deployment study and ONNX implementation of d1-3B — fixed-geometry vision acceleration with measured silicon evidence, reference comparisons, and documented quantized-decoder fallback behavior.**
+
 Liquid's d1 decision models answer typed questions in **one forward pass** (no output tokens):
 yes/no (`noul`), pick-from-options (`choice`), ordered rubrics (`score`), with text, JSON or
 images as the state. This repo contains that model as **decision-shaped ONNX graphs** —
@@ -31,7 +33,7 @@ cache-free, fixed-shape, verified 1:1 against the official checkpoint.
 | Vision pipeline fold is exact | canonical vs folded path: max abs diff **0.000e+00** |
 | End-to-end image decision | COCO two-cats demo (as "two" choice): torch-native **0.9847** vs ONNX+NPU-vision **0.9849** — same answer, final-probability drift 2e-4 |
 | Runs on **AMD XDNA2 NPU** at **19.2×** | vision tile: **378 ms NPU vs 7,242 ms CPU** (CPU 21–26% busy during NPU runs — real DPU compute; NPU meter at 100%) |
-| Decision calibration preserved through the DPU | bf16 device noise on the NPU vision → final-probability drift 0.0002 |
+| Final-probability agreement through the NPU (single example) | cats demo: drift 0.0002 — indicative, **not** a calibration study (dataset-scale robustness evaluation is future work) |
 | Decisions match Liquid's own API | Liquid `system_one` → `two` @ conf 0.9859; our port → `two` @ 0.9847 (gap 0.001) |
 
 *(Probabilities refer to the cats demo decision; exact reference tensors + parity scripts live in the GitHub repo's `verify/reference/`.)*
@@ -46,6 +48,8 @@ cache-free, fixed-shape, verified 1:1 against the official checkpoint.
 | Text decoder on NPU | — | CPU-speed | see "NPU gating" below |
 
 ## The NPU gating finding
+
+*(Scope: tested on Ryzen AI Software 1.8.0, XDNA2/Krackan Point, our graph formats and the bare VitisAI EP path; other SDK versions or validated-zoo models may behave differently.)*
 
 AMD's VitisAI EP ships fused quantized NPU kernels (`waic_target_qhw4`) that **only dispatch on
 exact md5 signatures of models in AMD's own zoo** (`PHI_7B_4BIT`, `QWEN3_0.6B_8BIT`, ...; decoded
