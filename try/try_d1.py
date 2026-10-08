@@ -42,31 +42,83 @@ import torch
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
+ROOT = os.path.abspath(os.path.join(HERE, ".."))  # repo root
 # public layout: download the graphs from HF once:
 #   hf download huveewomg/d1-3B-ONNX --local-dir models
 # (put the tokenizer/config from LiquidAI/d1-3B next to them, or let HF resolve it)
 HF_MODEL = os.environ.get("D1_HF_MODEL", "LiquidAI/d1-3B")          # tokenizer/processor source
 MODELS_DIR = os.environ.get("D1_MODELS_DIR", os.path.abspath(os.path.join(ROOT, "models")))
-EMBEDS_GRAPH = os.path.join(MODELS_DIR, "onnx", "d1-3B_embeds_pass_seq512.onnx")
-EMBED_TABLE = os.path.join(MODELS_DIR, "onnx", "lm.embed_tokens.weight")
+def _model_file(name):
+    """Resolve a graph/weight file: <MODELS_DIR>/onnx/<name> (HF layout) or <MODELS_DIR>/<name>."""
+    for cand in (os.path.join(MODELS_DIR, "onnx", name), os.path.join(MODELS_DIR, name)):
+        if os.path.exists(cand):
+            return cand
+    return os.path.join(MODELS_DIR, "onnx", name)
+
+EMBEDS_GRAPH = _model_file("d1-3B_embeds_pass_seq512.onnx")
+EMBED_TABLE = _model_file("lm.embed_tokens.weight")
 MODEL_DIR = os.environ.get("D1_LOCAL_MODEL_DIR", MODELS_DIR)         # local ckpt if downloaded
 RYZEN_PY = os.environ.get("RYZEN_AI_PYTHON", r"C:\miniforge3\envs\ryzen-ai-1.8.0\python.exe")
-if not os.environ.get("D1_HUB_ONLINE"): os.environ.setdefault("HF_HUB_OFFLINE", "1")
+if os.environ.get("D1_HUB_OFFLINE"):
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
 
 
 import sys as _s
 _s.path.insert(0, MODEL_DIR)
 
+def tokenizer_source():
+    """A local dir only counts if it actually has tokenizer files; else resolve from the Hub."""
+    local_ok = os.path.isdir(MODEL_DIR) and os.path.exists(os.path.join(MODEL_DIR, "tokenizer.json"))
+    return MODEL_DIR if local_ok else HF_MODEL
+
+
 def load_env():
     os.environ.setdefault("PYTHONIOENCODING", "utf-8")
-    from transformers import AutoProcessor, AutoTokenizer, Lfm2VlForConditionalGeneration
-    tok = AutoTokenizer.from_pretrained(MODEL_DIR if os.path.isdir(MODEL_DIR) else HF_MODEL)
-    proc = AutoProcessor.from_pretrained(MODEL_DIR if os.path.isdir(MODEL_DIR) else HF_MODEL, trust_remote_code=True)
-    m = Lfm2VlForConditionalGeneration.from_pretrained(MODEL_DIR, torch_dtype=torch.float32).eval()
+    from transformers import AutoProcessor, AutoTokenizer
+    src = tokenizer_source()
+    tok = AutoTokenizer.from_pretrained(src)
+    proc = AutoProcessor.from_pretrained(src, trust_remote_code=True)
+    # make the checkpoint's remote prompt/readout modules importable (works for
+    # both a local checkpoint dir and a Hub-cached one)
+    probe = os.path.dirname(os.path.abspath(tok.__class__.__module__ and tok.name_or_path)) if hasattr(tok, 'name_or_path') else None
+    _ensure_d1_modules(src)
+    return tok, proc, None  # torch model loads LAZILY (CPU-vision fallback only)
+
+
+def _ensure_d1_modules(src):
+    """sys.path must contain the dir holding prompt.py/modeling_d1.py (local dir,
+    or the trust_remote_code snapshot inside the HF cache)."""
+    if _s.path and any(os.path.exists(os.path.join(p, "prompt.py")) for p in _s.path):
+        return
+    candidates = []
+    if os.path.isdir(src) and os.path.exists(os.path.join(src, "prompt.py")):
+        candidates.append(src)
+    hub_modules = os.path.join(os.path.expanduser("~"), ".cache", "huggingface",
+                               "modules", "transformers_modules")
+    if os.path.isdir(hub_modules):
+        import glob as _g
+        # LiquidAI/d1-3B remote code lands here after any trust_remote_code load
+        for pat in (os.path.join(hub_modules, "*d1*", "**", "prompt.py"),
+                    os.path.join(hub_modules, "*", "*d1*", "**", "prompt.py")):
+            for p_ in _g.glob(pat, recursive=True):
+                candidates.append(os.path.dirname(p_))
+    if not candidates:
+        # fresh install: nothing cached and no local checkpoint — fetch prompt.py
+        # explicitly from the Hub (it is self-contained: no relative imports)
+        from huggingface_hub import hf_hub_download
+        path = hf_hub_download(repo_id=HF_MODEL, filename="prompt.py")
+        candidates = [os.path.dirname(path)]
+    _s.path.insert(0, candidates[0])
+    return
+
+
+def load_torch_model():
+    from transformers import Lfm2VlForConditionalGeneration
+    m = Lfm2VlForConditionalGeneration.from_pretrained(
+        tokenizer_source(), torch_dtype=torch.float32).eval()
     for p in m.parameters():
         p.requires_grad_(False)
-    return tok, proc, m
+    return fold_vision(m)
 
 
 def fold_vision(m):
@@ -94,7 +146,7 @@ def vision_embeds(m, im):
                                         **{k: v for k, v in im.items() if k not in
                                            ("pixel_values", "input_ids", "input_embeds")},
                                         return_dict=True).pooler_output
-    return pv
+    return torch.cat(pv, dim=0)
 
 
 BENCH = False
@@ -107,14 +159,14 @@ def npu_stage_if_available(pv_np, mask_np, shapes_np):
     """Try the ryzen-env NPU vision; return None to signal CPU fallback."""
     if not os.path.exists(RYZEN_PY):
         return None
-    if not os.path.exists(os.path.join(EXPORT, "d1-3B_vision_tile512.onnx")):
+    if not os.path.exists(_model_file("d1-3B_vision_tile512.onnx")):
         return None
     tmp = tempfile.mktemp(suffix=".npz")
     out = tempfile.mktemp(suffix=".npz")
     np.savez(tmp, pv=pv_np, mask=mask_np, shapes=shapes_np)
     script = os.path.join(HERE, "try_d1_npu_stage.py")
     r = subprocess.run(
-        [RYZEN_PY, script, tmp, out, os.path.join(EXPORT, "d1-3B_vision_tile512.onnx")] + (["bench"] if BENCH else []),
+        [RYZEN_PY, script, tmp, out, _model_file("d1-3B_vision_tile512.onnx")] + (["bench"] if BENCH else []),
         capture_output=True, text=True, timeout=2400)
     if os.path.exists(out): print(r.stdout.strip())
     if r.returncode != 0 or not os.path.exists(out):
@@ -187,7 +239,9 @@ def decide(args, ctx):
             if int(pam[0].sum()) == 1024 and tuple(pv.shape[1:]) == (1024, 768):
                 img_embeds = npu_stage_if_available(pv, pam, ss)
         if img_embeds is None:
-            img_embeds = vision_embeds(torch_tensorize(m, pv, ss, pam)).reshape(-1, 2048).numpy()
+            if m is None:
+                m = load_torch_model()  # lazy: 6 GB checkpoint, CPU-vision fallback only
+            img_embeds = vision_embeds(m, torch_tensorize(m, pv, ss, pam)).reshape(-1, 2048).numpy()
             print(f"  [CPU vision, {K} tile(s)]")
         # host merge
         table = np.memmap(EMBED_TABLE, dtype="<f4", mode="r").reshape(128000, 2048)
@@ -243,7 +297,7 @@ def main():
         interactive()
         return
     a = ap.parse_args()
-    ctx = load_env(); fold_vision(ctx[2])
+    ctx = load_env()
     label, conf, probs, L = decide(a, ctx)
     print(f"\n=== d1 decision [{L} tokens read] ===")
     print(f"answer: {label}   confidence: {conf:.4f}")
@@ -253,7 +307,7 @@ def main():
 def interactive():
     print("try_d1 interactive — for each round you'll be asked: type, instructions,")
     print("criteria (blank for noul), image path (blank = text mode), state text.")
-    ctx = load_env(); fold_vision(ctx[2])
+    ctx = load_env()
     while True:
         t = input("type [choice/q/noul/score, q=quit] > ").strip()
         if t == "q":

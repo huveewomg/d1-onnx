@@ -16,7 +16,7 @@ tags:
 
 # d1-3B — ONNX single-pass port (NPU-friendly)
 
-**To our knowledge, the first execution of a d1 decision model on an AMD NPU — verified against the official checkpoint.** A parallel browser port exists: [onnx-community/d1-3B-ONNX](https://huggingface.co/onnx-community/d1-3B-ONNX) (Transformers.js/WebGPU, same readout approach, published the same week — credit to them for the browser port and the conversion methodology). On Ryzen AI NPU, the two ports behave the same way and neither reaches the DPU for the text decoder as-shipped: graphs carrying generic quantized-matmul ops (`MatMulInteger`/`MatMulNBits`) fall back to CPU, and the fp32 route hits either monolithic-graph inefficiency or, for NaFlex vision graphs, a compiler segfault — the exact issues dissected in the gating forensics below, this repo's novel contribution alongside the NPU-compiled vision graph (which resolves them by constant-folding the dynamic geometry).
+**d1-3B image decisions with AMD XDNA2-accelerated vision — to our knowledge the first d1 execution on AMD NPU silicon (XDNA2) — verified against the official checkpoint.** The text leg runs on CPU (see the table). A parallel browser port exists: [onnx-community/d1-3B-ONNX](https://huggingface.co/onnx-community/d1-3B-ONNX) (Transformers.js/WebGPU, same readout approach, published the same week — credit to them for the browser port and the conversion methodology). On Ryzen AI NPU, the two ports behave the same way and neither reaches the DPU for the text decoder as-shipped: graphs carrying generic quantized-matmul ops (`MatMulInteger`/`MatMulNBits`) fall back to CPU, and the fp32 route hits either monolithic-graph inefficiency or, for NaFlex vision graphs, a compiler segfault — the exact issues dissected in the gating forensics below, this repo's novel contribution alongside the NPU-compiled vision graph (which resolves them by constant-folding the dynamic geometry).
 
 **In one sentence: an AMD XDNA2 deployment study and ONNX implementation of d1-3B — fixed-geometry vision acceleration with measured silicon evidence, reference comparisons, and documented quantized-decoder fallback behavior.**
 
@@ -32,7 +32,7 @@ cache-free, fixed-shape, verified 1:1 against the official checkpoint.
 | Text backbone matches Liquid's official code | ONNX logits vs torch-native: max abs diff **2.9e-05** (readout probabilities agree to 1e-06); torch-native vs Liquid's remote code: **0.0** (identical) — both on real weights |
 | Vision pipeline fold is exact | canonical vs folded path: max abs diff **0.000e+00** |
 | End-to-end image decision | COCO two-cats demo (as "two" choice): torch-native **0.9847** vs ONNX+NPU-vision **0.9849** — same answer, final-probability drift 2e-4 |
-| Runs on **AMD XDNA2 NPU** at **19.2×** | vision tile: **378 ms NPU vs 7,242 ms CPU** (CPU 21–26% busy during NPU runs — real DPU compute; NPU meter at 100%) |
+| Vision-stage speedup vs measured CPU baseline | one 512×512 tile: **378 ms NPU vs 7,242 ms CPU = 19.2×** (same graph; CPU 21–26% busy during NPU runs — real DPU compute; NPU meter at 100%). Whole-pipeline numbers: see "What runs where" |
 | Final-probability agreement through the NPU (single example) | cats demo: drift 0.0002 — indicative, **not** a calibration study (dataset-scale robustness evaluation is future work) |
 | Decisions match Liquid's own API | Liquid `system_one` → `two` @ conf 0.9859; our port → `two` @ 0.9847 (gap 0.001) |
 
@@ -58,8 +58,11 @@ from `vaip_config.json`'s `mepTable`). Arbitrary models fall to the generic comp
 even when the partition report claims 100% of GOPs placed. Requesting the zoo target explicitly
 loads but binds no AIE (`XAie_SetIOBackend: Invalid backend request`).
 
-This explains why a 3.1B decision model with a 0.2 ms theoretical NPU budget measures hundreds of
-milliseconds: the compute physically cannot reach the DPU for non-zoo graphs today. Encoder-like
+In our testing (SDK 1.8.0, the tested quantized decoder graphs, bare-EP path), the 3.1B model's
+0.2 ms theoretical NPU budget measures hundreds of milliseconds: the quantized matrix math does
+not reach the DPU on the tested path. Encoder-style fp32 graphs in the same flow DO accelerate
+(19.2× here; nomic control 33.5 ms NPU vs 79 ms CPU). Other SDK versions or zoo-validated
+models may behave differently. Encoder-like
 graphs in the generic flow DO accelerate (19.2× here; a nomic control: 33.5 ms NPU vs 79 ms CPU).
 
 ## Files
@@ -95,7 +98,8 @@ hf download huveewomg/d1-3B-ONNX --local-dir models      # graphs (17 GB; graphs
 # tokenizer/processor: either copy from LiquidAI/d1-3B or let the tools resolve it from the Hub
 
 # CPU-only decision (no AMD SDK needed):
-python try/try_d1.py --state "I was charged twice this month, please refund one of them."     --type noul --instructions "Is the customer asking for a refund?"
+python try/try_d1.py --state "I was charged twice this month, please refund one of them." \
+    --type noul --instructions "Is the customer asking for a refund?"
 
 # NPU vision stage additionally needs: Ryzen AI Software 1.8.0 (VitisAI EP), XDNA2 silicon,
 # and env vars RYZEN_AI_PYTHON + VAIP_CONFIG pointing at that installation (see try/try_d1.py).
@@ -108,12 +112,14 @@ The conversion + verification tooling (export pipeline, parity/benchmark harness
 Demo image: `assets/cats.jpg` (COCO 39769).
 
 ```bash
-# text-only decision (any Ryzen AI machine, CPU)
-python try_d1.py --state "I was charged twice this month, please refund one of them." \n    --type noul --instructions "Is the customer asking for a refund?" --state "I was charged twice this month, please refund one of them." \
+hf download huveewomg/d1-3B-ONNX --local-dir models
+
+# text-only decision (CPU; ONNX graphs + Hub tokenizer suffice — no torch checkpoint)
+python try/try_d1.py --state "I was charged twice this month, please refund one of them." \
     --type noul --instructions "Is the customer asking for a refund?"
 
 # image decision through the NPU
-python try_d1.py --image cats.jpg --type choice \
+python try/try_d1.py --image assets/cats.jpg --type choice \
     --instructions "How many cats are there?" --criteria "one=One,two=Two,more=Three or more"
 ```
 

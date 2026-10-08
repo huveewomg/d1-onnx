@@ -32,6 +32,8 @@ from transformers import Lfm2VlForConditionalGeneration  # noqa: E402
 POS_SIZE = 32      # patch grid of a 512x512 tile (patch 16)
 MAX_PATCHES = 1024
 FORBIDDEN_OPS = {"Resize", "ScatterND", "ScatterElements", "GatherND"}
+FOLD_TOL = 1e-06
+ORT_TOL = 1e-04
 
 
 def main():
@@ -45,7 +47,17 @@ def main():
     lm_mod = m.model
     tower = lm_mod.vision_tower
 
-    # --- fold the positional pipeline ---
+    # STEP 1: canonical reference BEFORE any patching (unpatched embeddings path)
+    patches = POS_SIZE * POS_SIZE
+    pv = torch.randn(1, patches, 768)
+    ss = torch.tensor([[POS_SIZE, POS_SIZE]], dtype=torch.int64)
+    pam = torch.ones(1, patches, dtype=torch.int32)
+    with torch.no_grad():
+        canon = torch.cat(lm_mod.get_image_features(
+            pixel_values=pv, spatial_shapes=ss, pixel_attention_mask=pam,
+            return_dict=True).pooler_output, dim=0)
+
+    # STEP 2: fold the positional pipeline
     emb = tower.embeddings
     with torch.no_grad():
         pos = emb.position_embedding.weight.reshape(emb.position_embedding_size,
@@ -86,18 +98,16 @@ def main():
 
     vt = VisionTile().eval()
 
-    # correctness gate: CANONICAL path vs folded path
-    patches = POS_SIZE * POS_SIZE
-    pv = torch.randn(1, patches, 768)
-    ss = torch.tensor([[POS_SIZE, POS_SIZE]], dtype=torch.int64)
-    pam = torch.ones(1, patches, dtype=torch.int32)
+    # STEP 3: the genuine gate — folded wrapper vs the canonical computed pre-patch
     with torch.no_grad():
-        canon = torch.cat(lm_mod.get_image_features(
-            pixel_values=pv, spatial_shapes=ss, pixel_attention_mask=pam,
-            return_dict=True).pooler_output, dim=0)
         ref = vt(pv)
     d = float((canon - ref).abs().max())
-    print(f"canonical vs folded-pos torch maxdiff: {d:.3e}  shapes {tuple(canon.shape)} vs {tuple(ref.shape)}")
+    print(f"canonical (unpatched) vs folded torch maxdiff: {d:.3e}  shapes {tuple(canon.shape)} vs {tuple(ref.shape)}")
+    if not np.isfinite(d):
+        raise SystemExit("FOLD GATE FAILED: non-finite difference (NaN/inf) — aborting")
+    if d > FOLD_TOL:
+        raise SystemExit(f"FOLD GATE FAILED: maxdiff {d:.3e} > tolerance {FOLD_TOL:.0e} — the constant-fold is not mathematically exact")
+    print("FOLD GATE PASSED")
 
     t0 = time.time()
     torch.onnx.export(
@@ -113,12 +123,20 @@ def main():
     ops = {n.op_type for n in g.graph.node}
     bad = ops & FORBIDDEN_OPS
     print("graph ops check:", "CLEAN" if not bad else f"STILL PRESENT: {bad}")
+    if bad:
+        raise SystemExit(f"FORBIDDEN OPS PRESENT after folding: {bad} — the NPU compile will likely segfault")
 
-    # CPU parity — single input now
+    # CPU parity — single input now; this gate can also FAIL
     import onnxruntime as ort
     s = ort.InferenceSession(OUT, providers=["CPUExecutionProvider"])
     o = s.run(None, {"pixel_values": pv.numpy()})[0]
-    print("ORT maxdiff vs torch folded:", float(np.abs(o.astype(np.float64) - ref.numpy()).max()))
+    d_ort = float(np.abs(o.astype(np.float64) - ref.numpy()).max())
+    print("ORT maxdiff vs torch folded:", f"{d_ort:.3e}")
+    if not np.isfinite(d_ort):
+        raise SystemExit("ORT GATE FAILED: non-finite output diff (NaN/inf)")
+    if d_ort > ORT_TOL:
+        raise SystemExit(f"ORT GATE FAILED: maxdiff {d_ort:.3e} > tolerance {ORT_TOL:.0e} — ONNX graph does not match torch")
+    print("ORT GATE PASSED")
 
 
 if __name__ == "__main__":
