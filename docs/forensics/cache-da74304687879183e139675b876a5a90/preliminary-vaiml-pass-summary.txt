@@ -1,0 +1,16 @@
+----- Preliminary Summary of WCR EP VAIML Pass ------
+VAIP commit: N/A
+Model: C:\Users\RT Wong\Desktop\Personal Project\npu-playground\tools\d1-probe\export\d1-3B_text_pass_seq128.onnx
+Model data type: float32
+Device data type: bfloat16
+Number of operators in the model: 1338
+GOPs of the model: 661.878
+Number of operators supported by VAIML: 1331(99.477%)
+GOPs supported by VAIML: 661.878 (100.000%)
+Number of subgraphs supported by VAIML: 1
+
+Number of identified subgraphs: 1
+Stats for identified subgraphs
+vaiml_par_0 stats:
+    Operators: 1331 (99.477%)
+    GOPs: 661.878(100.000%)  OPs: 661,877,606,246

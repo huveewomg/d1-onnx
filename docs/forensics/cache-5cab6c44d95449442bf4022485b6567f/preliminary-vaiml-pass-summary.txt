@@ -1,0 +1,376 @@
+----- Preliminary Summary of WCR EP VAIML Pass ------
+VAIP commit: N/A
+Model: C:\Users\RT Wong\Desktop\Personal Project\npu-playground\tools\d1-probe\export\d1-3B_int4_g128_seq128.onnx
+Model data type: float32
+Device data type: bfloat16
+Number of operators in the model: 1592
+GOPs of the model: 38.571
+Number of operators supported by VAIML: 1419(89.133%)
+GOPs supported by VAIML: 38.570 (99.999%)
+Number of subgraphs supported by VAIML: 121
+
+Number of identified subgraphs: 121
+Stats for identified subgraphs
+vaiml_par_9 stats:
+    Operators: 49 (3.078%)
+    GOPs: 0.204(0.528%)  OPs: 203,810,828
+vaiml_par_21 stats:
+    Operators: 49 (3.078%)
+    GOPs: 0.204(0.528%)  OPs: 203,810,828
+vaiml_par_37 stats:
+    Operators: 49 (3.078%)
+    GOPs: 0.204(0.528%)  OPs: 203,810,828
+vaiml_par_53 stats:
+    Operators: 49 (3.078%)
+    GOPs: 0.204(0.528%)  OPs: 203,810,828
+vaiml_par_69 stats:
+    Operators: 49 (3.078%)
+    GOPs: 0.204(0.528%)  OPs: 203,810,828
+vaiml_par_85 stats:
+    Operators: 49 (3.078%)
+    GOPs: 0.204(0.528%)  OPs: 203,810,828
+vaiml_par_97 stats:
+    Operators: 49 (3.078%)
+    GOPs: 0.204(0.528%)  OPs: 203,810,828
+vaiml_par_109 stats:
+    Operators: 49 (3.078%)
+    GOPs: 0.204(0.528%)  OPs: 203,810,828
+vaiml_par_0 stats:
+    Operators: 19 (1.193%)
+    GOPs: 0.022(0.057%)  OPs: 21,846,788
+vaiml_par_1 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_5 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_13 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_17 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_25 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_29 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_33 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_41 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_45 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_49 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_57 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_61 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_65 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_73 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_77 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_81 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_89 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_93 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_101 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_105 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_113 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_117 stats:
+    Operators: 12 (0.754%)
+    GOPs: 0.005(0.012%)  OPs: 4,743,172
+vaiml_par_120 stats:
+    Operators: 12 (0.754%)
+    GOPs: 32.788(85.008%)  OPs: 32,788,457,734
+vaiml_par_4 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_12 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_16 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_24 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_28 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_32 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_40 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_44 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_48 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_56 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_60 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_64 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_72 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_76 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_80 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_88 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_92 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_100 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_104 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_112 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_116 stats:
+    Operators: 10 (0.628%)
+    GOPs: 0.021(0.054%)  OPs: 20,977,924
+vaiml_par_2 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_6 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_8 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_10 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_14 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_18 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_20 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_22 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_26 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_30 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_34 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_36 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_38 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_42 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_46 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_50 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_52 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_54 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_58 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_62 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_66 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_68 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_70 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_74 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_78 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_82 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_84 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_86 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_90 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_94 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_96 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_98 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_102 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_106 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_108 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_110 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_114 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_118 stats:
+    Operators: 9 (0.565%)
+    GOPs: 0.020(0.053%)  OPs: 20,453,636
+vaiml_par_3 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_7 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_11 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_15 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_19 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_23 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_27 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_31 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_35 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_39 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_43 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_47 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_51 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_55 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_59 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_63 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_67 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_71 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_75 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_79 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_83 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_87 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_91 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_95 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_99 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_103 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_107 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_111 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_115 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414
+vaiml_par_119 stats:
+    Operators: 6 (0.377%)
+    GOPs: 0.094(0.243%)  OPs: 93,585,414

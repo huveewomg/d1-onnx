@@ -1,0 +1,10 @@
+# code license: MIT (see LICENSE-CODE); model weights: LFM Open License v1.0
+transformers>=5.19
+torch>=2.4
+onnx>=1.22
+onnxruntime>=1.30
+onnxoptimizer
+huggingface_hub
+pillow
+numpy
+# NPU paths additionally require: AMD Ryzen AI Software 1.8.0 (VitisAI EP)

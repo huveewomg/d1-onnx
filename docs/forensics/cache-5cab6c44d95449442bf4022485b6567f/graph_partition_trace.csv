@@ -1,0 +1,1593 @@
+Node,Type,Subgraph,Status
+/Slice,Slice,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/head/MatMul,Gemm,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/And_1,And,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/Cast,Cast,,Not supported. Check aie_unsupported_original_ops.
+/lm/Flatten,Flatten,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/Gather_1,Gather,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/Reshape_new_reshape,Reshape,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/Slice,Slice,,Supported
+/lm/embed_tokens/Gather,Gather,,Not supported. Check aie_unsupported_original_ops.
+/lm/embedding_norm/Add,Add,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/embedding_norm/Div,Div,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/embedding_norm/Mul_1,Mul,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/embedding_norm/Pow,Pow,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/embedding_norm/ReduceMean,ReduceMean,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/embedding_norm/Sqrt,Sqrt,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/Add,Add,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/Add_1,Add,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Conv,Conv,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Mul,Mul,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Mul_4,Mul,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Mul_5,Mul,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Slice,Slice,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Slice_1,Slice,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Slice_2,Slice,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Slice_3,Slice,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Transpose,Transpose,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Transpose_1,Transpose,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/conv/Unsqueeze,Unsqueeze,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.0/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.0/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.0/feed_forward/Mul,Mul,vaiml_par_3,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/feed_forward/Mul_1,Mul,vaiml_par_3,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/feed_forward/Sigmoid,Sigmoid,vaiml_par_3,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.0/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.0/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.0/ffn_norm/Add,Add,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/ffn_norm/Div,Div,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/ffn_norm/Mul_1,Mul,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/ffn_norm/Pow,Pow,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/ffn_norm/ReduceMean,ReduceMean,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/ffn_norm/Sqrt,Sqrt,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/operator_norm/Add,Add,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/operator_norm/Div,Div,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/operator_norm/Mul_1,Mul,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/operator_norm/Pow,Pow,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/operator_norm/ReduceMean,ReduceMean,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.0/operator_norm/Sqrt,Sqrt,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/Add,Add,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/Add_1,Add,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Conv,Conv,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Mul,Mul,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Mul_4,Mul,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Mul_5,Mul,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Slice,Slice,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Slice_1,Slice,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Slice_2,Slice,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Slice_3,Slice,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Transpose,Transpose,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/Transpose_1,Transpose,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.1/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.1/feed_forward/Mul,Mul,vaiml_par_7,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/feed_forward/Mul_1,Mul,vaiml_par_7,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/feed_forward/Sigmoid,Sigmoid,vaiml_par_7,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.1/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.1/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.1/ffn_norm/Add,Add,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/ffn_norm/Div,Div,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/ffn_norm/Mul_1,Mul,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/ffn_norm/Pow,Pow,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/ffn_norm/ReduceMean,ReduceMean,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/ffn_norm/Sqrt,Sqrt,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/operator_norm/Add,Add,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/operator_norm/Div,Div,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/operator_norm/Mul_1,Mul,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/operator_norm/Pow,Pow,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/operator_norm/ReduceMean,ReduceMean,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.1/operator_norm/Sqrt,Sqrt,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/Add,Add,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/Add_1,Add,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Conv,Conv,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Mul,Mul,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Mul_4,Mul,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Mul_5,Mul,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Slice,Slice,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Slice_1,Slice,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Slice_2,Slice,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Slice_3,Slice,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Transpose,Transpose,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/Transpose_1,Transpose,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.10/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.10/feed_forward/Mul,Mul,vaiml_par_43,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/feed_forward/Mul_1,Mul,vaiml_par_43,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/feed_forward/Sigmoid,Sigmoid,vaiml_par_43,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.10/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.10/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.10/ffn_norm/Add,Add,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/ffn_norm/Div,Div,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/ffn_norm/Mul_1,Mul,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/ffn_norm/Pow,Pow,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/ffn_norm/ReduceMean,ReduceMean,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/ffn_norm/Sqrt,Sqrt,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/operator_norm/Add,Add,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/operator_norm/Div,Div,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/operator_norm/Mul_1,Mul,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/operator_norm/Pow,Pow,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/operator_norm/ReduceMean,ReduceMean,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.10/operator_norm/Sqrt,Sqrt,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/Add,Add,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/Add_1,Add,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Conv,Conv,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Mul,Mul,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Mul_4,Mul,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Mul_5,Mul,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Slice,Slice,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Slice_1,Slice,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Slice_2,Slice,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Slice_3,Slice,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Transpose,Transpose,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/Transpose_1,Transpose,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.11/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.11/feed_forward/Mul,Mul,vaiml_par_47,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/feed_forward/Mul_1,Mul,vaiml_par_47,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/feed_forward/Sigmoid,Sigmoid,vaiml_par_47,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.11/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.11/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.11/ffn_norm/Add,Add,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/ffn_norm/Div,Div,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/ffn_norm/Mul_1,Mul,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/ffn_norm/Pow,Pow,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/ffn_norm/ReduceMean,ReduceMean,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/ffn_norm/Sqrt,Sqrt,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/operator_norm/Add,Add,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/operator_norm/Div,Div,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/operator_norm/Mul_1,Mul,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/operator_norm/Pow,Pow,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/operator_norm/ReduceMean,ReduceMean,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.11/operator_norm/Sqrt,Sqrt,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/Add,Add,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/Add_1,Add,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Conv,Conv,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Mul,Mul,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Mul_4,Mul,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Mul_5,Mul,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Slice,Slice,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Slice_1,Slice,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Slice_2,Slice,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Slice_3,Slice,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Transpose,Transpose,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/Transpose_1,Transpose,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.12/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.12/feed_forward/Mul,Mul,vaiml_par_51,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/feed_forward/Mul_1,Mul,vaiml_par_51,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/feed_forward/Sigmoid,Sigmoid,vaiml_par_51,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.12/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.12/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.12/ffn_norm/Add,Add,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/ffn_norm/Div,Div,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/ffn_norm/Mul_1,Mul,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/ffn_norm/Pow,Pow,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/ffn_norm/ReduceMean,ReduceMean,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/ffn_norm/Sqrt,Sqrt,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/operator_norm/Add,Add,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/operator_norm/Div,Div,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/operator_norm/Mul_1,Mul,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/operator_norm/Pow,Pow,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/operator_norm/ReduceMean,ReduceMean,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.12/operator_norm/Sqrt,Sqrt,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/Add,Add,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/Add_1,Add,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/feed_forward/Mul,Mul,vaiml_par_55,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/feed_forward/Mul_1,Mul,vaiml_par_55,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/feed_forward/Sigmoid,Sigmoid,vaiml_par_55,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.13/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.13/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.13/ffn_norm/Add,Add,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/ffn_norm/Div,Div,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/ffn_norm/Mul_1,Mul,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/ffn_norm/Pow,Pow,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/ffn_norm/ReduceMean,ReduceMean,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/ffn_norm/Sqrt,Sqrt,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/operator_norm/Add,Add,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/operator_norm/Div,Div,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/operator_norm/Mul_1,Mul,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/operator_norm/Pow,Pow,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/operator_norm/ReduceMean,ReduceMean,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/operator_norm/Sqrt,Sqrt,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.13/self_attn/Add,Add,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Add_1,Add,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Add_2,Add,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Concat,Concat,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Concat_1,Concat,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Expand,Expand,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Expand_1,Expand,vaiml_par_53,Supported
+/lm/layers.13/self_attn/IsNaN,IsNaN,vaiml_par_53,Supported
+/lm/layers.13/self_attn/MatMul,MatMul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/MatMul_1,MatMul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Mul,Mul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Mul_1,Mul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Mul_2,Mul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Mul_3,Mul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Mul_6,Mul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Mul_7,Mul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Neg,Neg,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Neg_1,Neg,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Reshape_3,Reshape,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Reshape_4,Reshape,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Reshape_5_new_reshape,Reshape,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Slice,Slice,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Slice_1,Slice,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Slice_2,Slice,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Slice_3,Slice,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Softmax,Softmax,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Transpose,Transpose,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Transpose_1,Transpose,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Transpose_2,Transpose,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Transpose_3,Transpose,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Transpose_4,Transpose,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Unsqueeze,Unsqueeze,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Unsqueeze_1,Unsqueeze,vaiml_par_53,Supported
+/lm/layers.13/self_attn/Where_3,Where,vaiml_par_53,Supported
+/lm/layers.13/self_attn/k_layernorm/Add,Add,vaiml_par_53,Supported
+/lm/layers.13/self_attn/k_layernorm/Div,Div,vaiml_par_53,Supported
+/lm/layers.13/self_attn/k_layernorm/Mul_1,Mul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/k_layernorm/Pow,Pow,vaiml_par_53,Supported
+/lm/layers.13/self_attn/k_layernorm/ReduceMean,ReduceMean,vaiml_par_53,Supported
+/lm/layers.13/self_attn/k_layernorm/Sqrt,Sqrt,vaiml_par_53,Supported
+/lm/layers.13/self_attn/k_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.13/self_attn/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.13/self_attn/q_layernorm/Add,Add,vaiml_par_53,Supported
+/lm/layers.13/self_attn/q_layernorm/Div,Div,vaiml_par_53,Supported
+/lm/layers.13/self_attn/q_layernorm/Mul_1,Mul,vaiml_par_53,Supported
+/lm/layers.13/self_attn/q_layernorm/Pow,Pow,vaiml_par_53,Supported
+/lm/layers.13/self_attn/q_layernorm/ReduceMean,ReduceMean,vaiml_par_53,Supported
+/lm/layers.13/self_attn/q_layernorm/Sqrt,Sqrt,vaiml_par_53,Supported
+/lm/layers.13/self_attn/q_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.13/self_attn/v_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.14/Add,Add,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/Add_1,Add,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Conv,Conv,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Mul,Mul,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Mul_4,Mul,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Mul_5,Mul,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Slice,Slice,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Slice_1,Slice,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Slice_2,Slice,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Slice_3,Slice,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Transpose,Transpose,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/Transpose_1,Transpose,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.14/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.14/feed_forward/Mul,Mul,vaiml_par_59,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/feed_forward/Mul_1,Mul,vaiml_par_59,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/feed_forward/Sigmoid,Sigmoid,vaiml_par_59,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.14/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.14/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.14/ffn_norm/Add,Add,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/ffn_norm/Div,Div,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/ffn_norm/Mul_1,Mul,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/ffn_norm/Pow,Pow,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/ffn_norm/ReduceMean,ReduceMean,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/ffn_norm/Sqrt,Sqrt,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/operator_norm/Add,Add,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/operator_norm/Div,Div,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/operator_norm/Mul_1,Mul,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/operator_norm/Pow,Pow,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/operator_norm/ReduceMean,ReduceMean,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.14/operator_norm/Sqrt,Sqrt,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/Add,Add,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/Add_1,Add,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Conv,Conv,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Mul,Mul,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Mul_4,Mul,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Mul_5,Mul,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Slice,Slice,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Slice_1,Slice,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Slice_2,Slice,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Slice_3,Slice,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Transpose,Transpose,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/Transpose_1,Transpose,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.15/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.15/feed_forward/Mul,Mul,vaiml_par_63,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/feed_forward/Mul_1,Mul,vaiml_par_63,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/feed_forward/Sigmoid,Sigmoid,vaiml_par_63,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.15/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.15/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.15/ffn_norm/Add,Add,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/ffn_norm/Div,Div,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/ffn_norm/Mul_1,Mul,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/ffn_norm/Pow,Pow,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/ffn_norm/ReduceMean,ReduceMean,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/ffn_norm/Sqrt,Sqrt,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/operator_norm/Add,Add,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/operator_norm/Div,Div,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/operator_norm/Mul_1,Mul,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/operator_norm/Pow,Pow,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/operator_norm/ReduceMean,ReduceMean,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.15/operator_norm/Sqrt,Sqrt,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/Add,Add,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/Add_1,Add,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Conv,Conv,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Mul,Mul,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Mul_4,Mul,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Mul_5,Mul,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Slice,Slice,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Slice_1,Slice,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Slice_2,Slice,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Slice_3,Slice,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Transpose,Transpose,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/Transpose_1,Transpose,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.16/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.16/feed_forward/Mul,Mul,vaiml_par_67,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/feed_forward/Mul_1,Mul,vaiml_par_67,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/feed_forward/Sigmoid,Sigmoid,vaiml_par_67,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.16/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.16/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.16/ffn_norm/Add,Add,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/ffn_norm/Div,Div,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/ffn_norm/Mul_1,Mul,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/ffn_norm/Pow,Pow,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/ffn_norm/ReduceMean,ReduceMean,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/ffn_norm/Sqrt,Sqrt,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/operator_norm/Add,Add,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/operator_norm/Div,Div,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/operator_norm/Mul_1,Mul,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/operator_norm/Pow,Pow,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/operator_norm/ReduceMean,ReduceMean,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.16/operator_norm/Sqrt,Sqrt,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/Add,Add,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/Add_1,Add,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/feed_forward/Mul,Mul,vaiml_par_71,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/feed_forward/Mul_1,Mul,vaiml_par_71,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/feed_forward/Sigmoid,Sigmoid,vaiml_par_71,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.17/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.17/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.17/ffn_norm/Add,Add,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/ffn_norm/Div,Div,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/ffn_norm/Mul_1,Mul,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/ffn_norm/Pow,Pow,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/ffn_norm/ReduceMean,ReduceMean,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/ffn_norm/Sqrt,Sqrt,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/operator_norm/Add,Add,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/operator_norm/Div,Div,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/operator_norm/Mul_1,Mul,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/operator_norm/Pow,Pow,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/operator_norm/ReduceMean,ReduceMean,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/operator_norm/Sqrt,Sqrt,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.17/self_attn/Add,Add,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Add_1,Add,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Add_2,Add,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Concat,Concat,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Concat_1,Concat,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Expand,Expand,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Expand_1,Expand,vaiml_par_69,Supported
+/lm/layers.17/self_attn/IsNaN,IsNaN,vaiml_par_69,Supported
+/lm/layers.17/self_attn/MatMul,MatMul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/MatMul_1,MatMul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Mul,Mul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Mul_1,Mul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Mul_2,Mul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Mul_3,Mul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Mul_6,Mul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Mul_7,Mul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Neg,Neg,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Neg_1,Neg,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Reshape_3,Reshape,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Reshape_4,Reshape,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Reshape_5_new_reshape,Reshape,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Slice,Slice,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Slice_1,Slice,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Slice_2,Slice,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Slice_3,Slice,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Softmax,Softmax,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Transpose,Transpose,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Transpose_1,Transpose,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Transpose_2,Transpose,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Transpose_3,Transpose,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Transpose_4,Transpose,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Unsqueeze,Unsqueeze,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Unsqueeze_1,Unsqueeze,vaiml_par_69,Supported
+/lm/layers.17/self_attn/Where_3,Where,vaiml_par_69,Supported
+/lm/layers.17/self_attn/k_layernorm/Add,Add,vaiml_par_69,Supported
+/lm/layers.17/self_attn/k_layernorm/Div,Div,vaiml_par_69,Supported
+/lm/layers.17/self_attn/k_layernorm/Mul_1,Mul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/k_layernorm/Pow,Pow,vaiml_par_69,Supported
+/lm/layers.17/self_attn/k_layernorm/ReduceMean,ReduceMean,vaiml_par_69,Supported
+/lm/layers.17/self_attn/k_layernorm/Sqrt,Sqrt,vaiml_par_69,Supported
+/lm/layers.17/self_attn/k_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.17/self_attn/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.17/self_attn/q_layernorm/Add,Add,vaiml_par_69,Supported
+/lm/layers.17/self_attn/q_layernorm/Div,Div,vaiml_par_69,Supported
+/lm/layers.17/self_attn/q_layernorm/Mul_1,Mul,vaiml_par_69,Supported
+/lm/layers.17/self_attn/q_layernorm/Pow,Pow,vaiml_par_69,Supported
+/lm/layers.17/self_attn/q_layernorm/ReduceMean,ReduceMean,vaiml_par_69,Supported
+/lm/layers.17/self_attn/q_layernorm/Sqrt,Sqrt,vaiml_par_69,Supported
+/lm/layers.17/self_attn/q_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.17/self_attn/v_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.18/Add,Add,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/Add_1,Add,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Conv,Conv,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Mul,Mul,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Mul_4,Mul,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Mul_5,Mul,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Slice,Slice,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Slice_1,Slice,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Slice_2,Slice,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Slice_3,Slice,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Transpose,Transpose,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/Transpose_1,Transpose,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.18/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.18/feed_forward/Mul,Mul,vaiml_par_75,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/feed_forward/Mul_1,Mul,vaiml_par_75,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/feed_forward/Sigmoid,Sigmoid,vaiml_par_75,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.18/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.18/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.18/ffn_norm/Add,Add,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/ffn_norm/Div,Div,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/ffn_norm/Mul_1,Mul,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/ffn_norm/Pow,Pow,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/ffn_norm/ReduceMean,ReduceMean,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/ffn_norm/Sqrt,Sqrt,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/operator_norm/Add,Add,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/operator_norm/Div,Div,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/operator_norm/Mul_1,Mul,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/operator_norm/Pow,Pow,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/operator_norm/ReduceMean,ReduceMean,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.18/operator_norm/Sqrt,Sqrt,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/Add,Add,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/Add_1,Add,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Conv,Conv,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Mul,Mul,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Mul_4,Mul,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Mul_5,Mul,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Slice,Slice,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Slice_1,Slice,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Slice_2,Slice,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Slice_3,Slice,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Transpose,Transpose,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/Transpose_1,Transpose,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.19/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.19/feed_forward/Mul,Mul,vaiml_par_79,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/feed_forward/Mul_1,Mul,vaiml_par_79,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/feed_forward/Sigmoid,Sigmoid,vaiml_par_79,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.19/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.19/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.19/ffn_norm/Add,Add,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/ffn_norm/Div,Div,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/ffn_norm/Mul_1,Mul,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/ffn_norm/Pow,Pow,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/ffn_norm/ReduceMean,ReduceMean,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/ffn_norm/Sqrt,Sqrt,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/operator_norm/Add,Add,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/operator_norm/Div,Div,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/operator_norm/Mul_1,Mul,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/operator_norm/Pow,Pow,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/operator_norm/ReduceMean,ReduceMean,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.19/operator_norm/Sqrt,Sqrt,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/Add,Add,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/Add_1,Add,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/feed_forward/Mul,Mul,vaiml_par_11,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/feed_forward/Mul_1,Mul,vaiml_par_11,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/feed_forward/Sigmoid,Sigmoid,vaiml_par_11,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.2/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.2/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.2/ffn_norm/Add,Add,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/ffn_norm/Div,Div,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/ffn_norm/Mul_1,Mul,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/ffn_norm/Pow,Pow,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/ffn_norm/ReduceMean,ReduceMean,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/ffn_norm/Sqrt,Sqrt,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/operator_norm/Add,Add,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/operator_norm/Div,Div,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/operator_norm/Mul_1,Mul,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/operator_norm/Pow,Pow,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/operator_norm/ReduceMean,ReduceMean,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/operator_norm/Sqrt,Sqrt,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/self_attn/Add,Add,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Add_1,Add,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Add_2,Add,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Concat,Concat,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Concat_1,Concat,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Expand,Expand,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Expand_1,Expand,vaiml_par_9,Supported
+/lm/layers.2/self_attn/IsNaN,IsNaN,vaiml_par_9,Supported
+/lm/layers.2/self_attn/MatMul,MatMul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/MatMul_1,MatMul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Mul,Mul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Mul_1,Mul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Mul_2,Mul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Mul_3,Mul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Mul_6,Mul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Mul_7,Mul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Neg,Neg,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Neg_1,Neg,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Reshape_3,Reshape,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Reshape_4,Reshape,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Reshape_5_new_reshape,Reshape,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Slice,Slice,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Slice_1,Slice,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Slice_2,Slice,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Slice_3,Slice,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Softmax,Softmax,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Transpose,Transpose,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Transpose_1,Transpose,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Transpose_2,Transpose,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Transpose_3,Transpose,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Transpose_4,Transpose,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Unsqueeze,Unsqueeze,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/self_attn/Unsqueeze_1,Unsqueeze,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.2/self_attn/Unsqueeze_2,Unsqueeze,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Unsqueeze_3,Unsqueeze,vaiml_par_9,Supported
+/lm/layers.2/self_attn/Where_3,Where,vaiml_par_9,Supported
+/lm/layers.2/self_attn/k_layernorm/Add,Add,vaiml_par_9,Supported
+/lm/layers.2/self_attn/k_layernorm/Div,Div,vaiml_par_9,Supported
+/lm/layers.2/self_attn/k_layernorm/Mul_1,Mul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/k_layernorm/Pow,Pow,vaiml_par_9,Supported
+/lm/layers.2/self_attn/k_layernorm/ReduceMean,ReduceMean,vaiml_par_9,Supported
+/lm/layers.2/self_attn/k_layernorm/Sqrt,Sqrt,vaiml_par_9,Supported
+/lm/layers.2/self_attn/k_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.2/self_attn/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.2/self_attn/q_layernorm/Add,Add,vaiml_par_9,Supported
+/lm/layers.2/self_attn/q_layernorm/Div,Div,vaiml_par_9,Supported
+/lm/layers.2/self_attn/q_layernorm/Mul_1,Mul,vaiml_par_9,Supported
+/lm/layers.2/self_attn/q_layernorm/Pow,Pow,vaiml_par_9,Supported
+/lm/layers.2/self_attn/q_layernorm/ReduceMean,ReduceMean,vaiml_par_9,Supported
+/lm/layers.2/self_attn/q_layernorm/Sqrt,Sqrt,vaiml_par_9,Supported
+/lm/layers.2/self_attn/q_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.2/self_attn/v_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.20/Add,Add,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/Add_1,Add,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Conv,Conv,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Mul,Mul,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Mul_4,Mul,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Mul_5,Mul,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Slice,Slice,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Slice_1,Slice,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Slice_2,Slice,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Slice_3,Slice,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Transpose,Transpose,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/Transpose_1,Transpose,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.20/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.20/feed_forward/Mul,Mul,vaiml_par_83,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/feed_forward/Mul_1,Mul,vaiml_par_83,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/feed_forward/Sigmoid,Sigmoid,vaiml_par_83,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.20/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.20/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.20/ffn_norm/Add,Add,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/ffn_norm/Div,Div,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/ffn_norm/Mul_1,Mul,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/ffn_norm/Pow,Pow,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/ffn_norm/ReduceMean,ReduceMean,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/ffn_norm/Sqrt,Sqrt,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/operator_norm/Add,Add,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/operator_norm/Div,Div,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/operator_norm/Mul_1,Mul,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/operator_norm/Pow,Pow,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/operator_norm/ReduceMean,ReduceMean,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.20/operator_norm/Sqrt,Sqrt,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/Add,Add,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/Add_1,Add,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/feed_forward/Mul,Mul,vaiml_par_87,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/feed_forward/Mul_1,Mul,vaiml_par_87,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/feed_forward/Sigmoid,Sigmoid,vaiml_par_87,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.21/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.21/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.21/ffn_norm/Add,Add,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/ffn_norm/Div,Div,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/ffn_norm/Mul_1,Mul,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/ffn_norm/Pow,Pow,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/ffn_norm/ReduceMean,ReduceMean,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/ffn_norm/Sqrt,Sqrt,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/operator_norm/Add,Add,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/operator_norm/Div,Div,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/operator_norm/Mul_1,Mul,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/operator_norm/Pow,Pow,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/operator_norm/ReduceMean,ReduceMean,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/operator_norm/Sqrt,Sqrt,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.21/self_attn/Add,Add,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Add_1,Add,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Add_2,Add,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Concat,Concat,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Concat_1,Concat,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Expand,Expand,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Expand_1,Expand,vaiml_par_85,Supported
+/lm/layers.21/self_attn/IsNaN,IsNaN,vaiml_par_85,Supported
+/lm/layers.21/self_attn/MatMul,MatMul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/MatMul_1,MatMul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Mul,Mul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Mul_1,Mul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Mul_2,Mul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Mul_3,Mul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Mul_6,Mul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Mul_7,Mul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Neg,Neg,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Neg_1,Neg,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Reshape_3,Reshape,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Reshape_4,Reshape,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Reshape_5_new_reshape,Reshape,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Slice,Slice,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Slice_1,Slice,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Slice_2,Slice,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Slice_3,Slice,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Softmax,Softmax,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Transpose,Transpose,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Transpose_1,Transpose,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Transpose_2,Transpose,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Transpose_3,Transpose,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Transpose_4,Transpose,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Unsqueeze,Unsqueeze,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Unsqueeze_1,Unsqueeze,vaiml_par_85,Supported
+/lm/layers.21/self_attn/Where_3,Where,vaiml_par_85,Supported
+/lm/layers.21/self_attn/k_layernorm/Add,Add,vaiml_par_85,Supported
+/lm/layers.21/self_attn/k_layernorm/Div,Div,vaiml_par_85,Supported
+/lm/layers.21/self_attn/k_layernorm/Mul_1,Mul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/k_layernorm/Pow,Pow,vaiml_par_85,Supported
+/lm/layers.21/self_attn/k_layernorm/ReduceMean,ReduceMean,vaiml_par_85,Supported
+/lm/layers.21/self_attn/k_layernorm/Sqrt,Sqrt,vaiml_par_85,Supported
+/lm/layers.21/self_attn/k_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.21/self_attn/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.21/self_attn/q_layernorm/Add,Add,vaiml_par_85,Supported
+/lm/layers.21/self_attn/q_layernorm/Div,Div,vaiml_par_85,Supported
+/lm/layers.21/self_attn/q_layernorm/Mul_1,Mul,vaiml_par_85,Supported
+/lm/layers.21/self_attn/q_layernorm/Pow,Pow,vaiml_par_85,Supported
+/lm/layers.21/self_attn/q_layernorm/ReduceMean,ReduceMean,vaiml_par_85,Supported
+/lm/layers.21/self_attn/q_layernorm/Sqrt,Sqrt,vaiml_par_85,Supported
+/lm/layers.21/self_attn/q_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.21/self_attn/v_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.22/Add,Add,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/Add_1,Add,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Conv,Conv,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Mul,Mul,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Mul_4,Mul,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Mul_5,Mul,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Slice,Slice,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Slice_1,Slice,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Slice_2,Slice,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Slice_3,Slice,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Transpose,Transpose,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/Transpose_1,Transpose,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.22/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.22/feed_forward/Mul,Mul,vaiml_par_91,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/feed_forward/Mul_1,Mul,vaiml_par_91,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/feed_forward/Sigmoid,Sigmoid,vaiml_par_91,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.22/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.22/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.22/ffn_norm/Add,Add,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/ffn_norm/Div,Div,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/ffn_norm/Mul_1,Mul,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/ffn_norm/Pow,Pow,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/ffn_norm/ReduceMean,ReduceMean,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/ffn_norm/Sqrt,Sqrt,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/operator_norm/Add,Add,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/operator_norm/Div,Div,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/operator_norm/Mul_1,Mul,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/operator_norm/Pow,Pow,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/operator_norm/ReduceMean,ReduceMean,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.22/operator_norm/Sqrt,Sqrt,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/Add,Add,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/Add_1,Add,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Conv,Conv,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Mul,Mul,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Mul_4,Mul,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Mul_5,Mul,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Slice,Slice,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Slice_1,Slice,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Slice_2,Slice,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Slice_3,Slice,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Transpose,Transpose,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/Transpose_1,Transpose,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.23/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.23/feed_forward/Mul,Mul,vaiml_par_95,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/feed_forward/Mul_1,Mul,vaiml_par_95,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/feed_forward/Sigmoid,Sigmoid,vaiml_par_95,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.23/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.23/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.23/ffn_norm/Add,Add,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/ffn_norm/Div,Div,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/ffn_norm/Mul_1,Mul,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/ffn_norm/Pow,Pow,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/ffn_norm/ReduceMean,ReduceMean,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/ffn_norm/Sqrt,Sqrt,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/operator_norm/Add,Add,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/operator_norm/Div,Div,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/operator_norm/Mul_1,Mul,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/operator_norm/Pow,Pow,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/operator_norm/ReduceMean,ReduceMean,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.23/operator_norm/Sqrt,Sqrt,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/Add,Add,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/Add_1,Add,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/feed_forward/Mul,Mul,vaiml_par_99,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/feed_forward/Mul_1,Mul,vaiml_par_99,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/feed_forward/Sigmoid,Sigmoid,vaiml_par_99,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.24/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.24/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.24/ffn_norm/Add,Add,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/ffn_norm/Div,Div,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/ffn_norm/Mul_1,Mul,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/ffn_norm/Pow,Pow,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/ffn_norm/ReduceMean,ReduceMean,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/ffn_norm/Sqrt,Sqrt,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/operator_norm/Add,Add,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/operator_norm/Div,Div,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/operator_norm/Mul_1,Mul,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/operator_norm/Pow,Pow,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/operator_norm/ReduceMean,ReduceMean,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/operator_norm/Sqrt,Sqrt,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.24/self_attn/Add,Add,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Add_1,Add,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Add_2,Add,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Concat,Concat,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Concat_1,Concat,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Expand,Expand,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Expand_1,Expand,vaiml_par_97,Supported
+/lm/layers.24/self_attn/IsNaN,IsNaN,vaiml_par_97,Supported
+/lm/layers.24/self_attn/MatMul,MatMul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/MatMul_1,MatMul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Mul,Mul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Mul_1,Mul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Mul_2,Mul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Mul_3,Mul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Mul_6,Mul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Mul_7,Mul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Neg,Neg,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Neg_1,Neg,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Reshape_3,Reshape,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Reshape_4,Reshape,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Reshape_5_new_reshape,Reshape,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Slice,Slice,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Slice_1,Slice,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Slice_2,Slice,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Slice_3,Slice,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Softmax,Softmax,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Transpose,Transpose,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Transpose_1,Transpose,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Transpose_2,Transpose,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Transpose_3,Transpose,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Transpose_4,Transpose,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Unsqueeze,Unsqueeze,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Unsqueeze_1,Unsqueeze,vaiml_par_97,Supported
+/lm/layers.24/self_attn/Where_3,Where,vaiml_par_97,Supported
+/lm/layers.24/self_attn/k_layernorm/Add,Add,vaiml_par_97,Supported
+/lm/layers.24/self_attn/k_layernorm/Div,Div,vaiml_par_97,Supported
+/lm/layers.24/self_attn/k_layernorm/Mul_1,Mul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/k_layernorm/Pow,Pow,vaiml_par_97,Supported
+/lm/layers.24/self_attn/k_layernorm/ReduceMean,ReduceMean,vaiml_par_97,Supported
+/lm/layers.24/self_attn/k_layernorm/Sqrt,Sqrt,vaiml_par_97,Supported
+/lm/layers.24/self_attn/k_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.24/self_attn/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.24/self_attn/q_layernorm/Add,Add,vaiml_par_97,Supported
+/lm/layers.24/self_attn/q_layernorm/Div,Div,vaiml_par_97,Supported
+/lm/layers.24/self_attn/q_layernorm/Mul_1,Mul,vaiml_par_97,Supported
+/lm/layers.24/self_attn/q_layernorm/Pow,Pow,vaiml_par_97,Supported
+/lm/layers.24/self_attn/q_layernorm/ReduceMean,ReduceMean,vaiml_par_97,Supported
+/lm/layers.24/self_attn/q_layernorm/Sqrt,Sqrt,vaiml_par_97,Supported
+/lm/layers.24/self_attn/q_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.24/self_attn/v_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.25/Add,Add,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/Add_1,Add,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Conv,Conv,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Mul,Mul,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Mul_4,Mul,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Mul_5,Mul,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Slice,Slice,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Slice_1,Slice,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Slice_2,Slice,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Slice_3,Slice,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Transpose,Transpose,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/Transpose_1,Transpose,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.25/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.25/feed_forward/Mul,Mul,vaiml_par_103,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/feed_forward/Mul_1,Mul,vaiml_par_103,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/feed_forward/Sigmoid,Sigmoid,vaiml_par_103,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.25/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.25/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.25/ffn_norm/Add,Add,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/ffn_norm/Div,Div,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/ffn_norm/Mul_1,Mul,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/ffn_norm/Pow,Pow,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/ffn_norm/ReduceMean,ReduceMean,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/ffn_norm/Sqrt,Sqrt,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/operator_norm/Add,Add,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/operator_norm/Div,Div,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/operator_norm/Mul_1,Mul,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/operator_norm/Pow,Pow,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/operator_norm/ReduceMean,ReduceMean,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.25/operator_norm/Sqrt,Sqrt,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/Add,Add,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/Add_1,Add,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Conv,Conv,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Mul,Mul,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Mul_4,Mul,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Mul_5,Mul,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Slice,Slice,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Slice_1,Slice,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Slice_2,Slice,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Slice_3,Slice,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Transpose,Transpose,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/Transpose_1,Transpose,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.26/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.26/feed_forward/Mul,Mul,vaiml_par_107,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/feed_forward/Mul_1,Mul,vaiml_par_107,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/feed_forward/Sigmoid,Sigmoid,vaiml_par_107,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.26/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.26/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.26/ffn_norm/Add,Add,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/ffn_norm/Div,Div,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/ffn_norm/Mul_1,Mul,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/ffn_norm/Pow,Pow,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/ffn_norm/ReduceMean,ReduceMean,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/ffn_norm/Sqrt,Sqrt,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/operator_norm/Add,Add,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/operator_norm/Div,Div,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/operator_norm/Mul_1,Mul,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/operator_norm/Pow,Pow,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/operator_norm/ReduceMean,ReduceMean,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.26/operator_norm/Sqrt,Sqrt,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/Add,Add,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/Add_1,Add,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/feed_forward/Mul,Mul,vaiml_par_111,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/feed_forward/Mul_1,Mul,vaiml_par_111,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/feed_forward/Sigmoid,Sigmoid,vaiml_par_111,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.27/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.27/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.27/ffn_norm/Add,Add,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/ffn_norm/Div,Div,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/ffn_norm/Mul_1,Mul,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/ffn_norm/Pow,Pow,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/ffn_norm/ReduceMean,ReduceMean,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/ffn_norm/Sqrt,Sqrt,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/operator_norm/Add,Add,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/operator_norm/Div,Div,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/operator_norm/Mul_1,Mul,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/operator_norm/Pow,Pow,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/operator_norm/ReduceMean,ReduceMean,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/operator_norm/Sqrt,Sqrt,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Add,Add,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Add_1,Add,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Add_2,Add,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Concat,Concat,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Concat_1,Concat,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Expand,Expand,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Expand_1,Expand,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/IsNaN,IsNaN,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/MatMul,MatMul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/MatMul_1,MatMul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Mul,Mul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Mul_1,Mul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Mul_2,Mul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Mul_3,Mul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Mul_6,Mul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Mul_7,Mul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Neg,Neg,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Neg_1,Neg,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Reshape_3,Reshape,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Reshape_4,Reshape,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Reshape_5_new_reshape,Reshape,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Slice,Slice,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Slice_1,Slice,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Slice_2,Slice,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Slice_3,Slice,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Softmax,Softmax,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Transpose,Transpose,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Transpose_1,Transpose,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Transpose_2,Transpose,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Transpose_3,Transpose,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Transpose_4,Transpose,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Unsqueeze,Unsqueeze,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Unsqueeze_1,Unsqueeze,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Where_2,Where,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/Where_3,Where,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/k_layernorm/Add,Add,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/k_layernorm/Div,Div,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/k_layernorm/Mul_1,Mul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/k_layernorm/Pow,Pow,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/k_layernorm/ReduceMean,ReduceMean,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/k_layernorm/Sqrt,Sqrt,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/k_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.27/self_attn/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.27/self_attn/q_layernorm/Add,Add,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/q_layernorm/Div,Div,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/q_layernorm/Mul_1,Mul,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/q_layernorm/Pow,Pow,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/q_layernorm/ReduceMean,ReduceMean,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/q_layernorm/Sqrt,Sqrt,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.27/self_attn/q_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.27/self_attn/v_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.28/Add,Add,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/Add_1,Add,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Conv,Conv,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Mul,Mul,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Mul_4,Mul,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Mul_5,Mul,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Slice,Slice,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Slice_1,Slice,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Slice_2,Slice,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Slice_3,Slice,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Transpose,Transpose,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/Transpose_1,Transpose,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.28/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.28/feed_forward/Mul,Mul,vaiml_par_115,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/feed_forward/Mul_1,Mul,vaiml_par_115,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/feed_forward/Sigmoid,Sigmoid,vaiml_par_115,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.28/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.28/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.28/ffn_norm/Add,Add,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/ffn_norm/Div,Div,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/ffn_norm/Mul_1,Mul,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/ffn_norm/Pow,Pow,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/ffn_norm/ReduceMean,ReduceMean,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/ffn_norm/Sqrt,Sqrt,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/operator_norm/Add,Add,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/operator_norm/Div,Div,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/operator_norm/Mul_1,Mul,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/operator_norm/Pow,Pow,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/operator_norm/ReduceMean,ReduceMean,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.28/operator_norm/Sqrt,Sqrt,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/Add,Add,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/Add_1,Add,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Cast,Cast,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.29/conv/Conv,Conv,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Mul,Mul,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Mul_4,Mul,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Mul_5,Mul,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Slice,Slice,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Slice_1,Slice,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Slice_2,Slice,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Slice_3,Slice,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Transpose,Transpose,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/Transpose_1,Transpose,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.29/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.29/feed_forward/Mul,Mul,vaiml_par_119,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/feed_forward/Mul_1,Mul,vaiml_par_119,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/feed_forward/Sigmoid,Sigmoid,vaiml_par_119,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.29/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.29/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.29/ffn_norm/Add,Add,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/ffn_norm/Div,Div,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/ffn_norm/Mul_1,Mul,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/ffn_norm/Pow,Pow,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/ffn_norm/ReduceMean,ReduceMean,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/ffn_norm/Sqrt,Sqrt,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/operator_norm/Add,Add,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/operator_norm/Div,Div,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/operator_norm/Mul_1,Mul,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/operator_norm/Pow,Pow,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/operator_norm/ReduceMean,ReduceMean,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.29/operator_norm/Sqrt,Sqrt,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/Add,Add,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/Add_1,Add,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Conv,Conv,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Mul,Mul,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Mul_4,Mul,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Mul_5,Mul,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Slice,Slice,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Slice_1,Slice,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Slice_2,Slice,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Slice_3,Slice,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Transpose,Transpose,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/Transpose_1,Transpose,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.3/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.3/feed_forward/Mul,Mul,vaiml_par_15,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/feed_forward/Mul_1,Mul,vaiml_par_15,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/feed_forward/Sigmoid,Sigmoid,vaiml_par_15,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.3/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.3/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.3/ffn_norm/Add,Add,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/ffn_norm/Div,Div,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/ffn_norm/Mul_1,Mul,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/ffn_norm/Pow,Pow,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/ffn_norm/ReduceMean,ReduceMean,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/ffn_norm/Sqrt,Sqrt,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/operator_norm/Add,Add,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/operator_norm/Div,Div,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/operator_norm/Mul_1,Mul,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/operator_norm/Pow,Pow,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/operator_norm/ReduceMean,ReduceMean,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.3/operator_norm/Sqrt,Sqrt,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/Add,Add,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/Add_1,Add,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Conv,Conv,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Mul,Mul,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Mul_4,Mul,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Mul_5,Mul,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Slice,Slice,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Slice_1,Slice,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Slice_2,Slice,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Slice_3,Slice,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Transpose,Transpose,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/Transpose_1,Transpose,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.4/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.4/feed_forward/Mul,Mul,vaiml_par_19,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/feed_forward/Mul_1,Mul,vaiml_par_19,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/feed_forward/Sigmoid,Sigmoid,vaiml_par_19,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.4/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.4/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.4/ffn_norm/Add,Add,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/ffn_norm/Div,Div,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/ffn_norm/Mul_1,Mul,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/ffn_norm/Pow,Pow,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/ffn_norm/ReduceMean,ReduceMean,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/ffn_norm/Sqrt,Sqrt,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/operator_norm/Add,Add,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/operator_norm/Div,Div,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/operator_norm/Mul_1,Mul,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/operator_norm/Pow,Pow,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/operator_norm/ReduceMean,ReduceMean,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.4/operator_norm/Sqrt,Sqrt,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/Add,Add,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/Add_1,Add,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/feed_forward/Mul,Mul,vaiml_par_23,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/feed_forward/Mul_1,Mul,vaiml_par_23,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/feed_forward/Sigmoid,Sigmoid,vaiml_par_23,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.5/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.5/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.5/ffn_norm/Add,Add,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/ffn_norm/Div,Div,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/ffn_norm/Mul_1,Mul,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/ffn_norm/Pow,Pow,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/ffn_norm/ReduceMean,ReduceMean,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/ffn_norm/Sqrt,Sqrt,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/operator_norm/Add,Add,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/operator_norm/Div,Div,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/operator_norm/Mul_1,Mul,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/operator_norm/Pow,Pow,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/operator_norm/ReduceMean,ReduceMean,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/operator_norm/Sqrt,Sqrt,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.5/self_attn/Add,Add,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Add_1,Add,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Add_2,Add,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Concat,Concat,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Concat_1,Concat,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Expand,Expand,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Expand_1,Expand,vaiml_par_21,Supported
+/lm/layers.5/self_attn/IsNaN,IsNaN,vaiml_par_21,Supported
+/lm/layers.5/self_attn/MatMul,MatMul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/MatMul_1,MatMul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Mul,Mul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Mul_1,Mul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Mul_2,Mul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Mul_3,Mul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Mul_6,Mul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Mul_7,Mul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Neg,Neg,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Neg_1,Neg,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Reshape_3,Reshape,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Reshape_4,Reshape,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Reshape_5_new_reshape,Reshape,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Slice,Slice,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Slice_1,Slice,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Slice_2,Slice,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Slice_3,Slice,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Softmax,Softmax,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Transpose,Transpose,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Transpose_1,Transpose,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Transpose_2,Transpose,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Transpose_3,Transpose,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Transpose_4,Transpose,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Unsqueeze,Unsqueeze,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Unsqueeze_1,Unsqueeze,vaiml_par_21,Supported
+/lm/layers.5/self_attn/Where_3,Where,vaiml_par_21,Supported
+/lm/layers.5/self_attn/k_layernorm/Add,Add,vaiml_par_21,Supported
+/lm/layers.5/self_attn/k_layernorm/Div,Div,vaiml_par_21,Supported
+/lm/layers.5/self_attn/k_layernorm/Mul_1,Mul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/k_layernorm/Pow,Pow,vaiml_par_21,Supported
+/lm/layers.5/self_attn/k_layernorm/ReduceMean,ReduceMean,vaiml_par_21,Supported
+/lm/layers.5/self_attn/k_layernorm/Sqrt,Sqrt,vaiml_par_21,Supported
+/lm/layers.5/self_attn/k_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.5/self_attn/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.5/self_attn/q_layernorm/Add,Add,vaiml_par_21,Supported
+/lm/layers.5/self_attn/q_layernorm/Div,Div,vaiml_par_21,Supported
+/lm/layers.5/self_attn/q_layernorm/Mul_1,Mul,vaiml_par_21,Supported
+/lm/layers.5/self_attn/q_layernorm/Pow,Pow,vaiml_par_21,Supported
+/lm/layers.5/self_attn/q_layernorm/ReduceMean,ReduceMean,vaiml_par_21,Supported
+/lm/layers.5/self_attn/q_layernorm/Sqrt,Sqrt,vaiml_par_21,Supported
+/lm/layers.5/self_attn/q_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.5/self_attn/v_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.6/Add,Add,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/Add_1,Add,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Conv,Conv,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Mul,Mul,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Mul_4,Mul,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Mul_5,Mul,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Slice,Slice,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Slice_1,Slice,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Slice_2,Slice,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Slice_3,Slice,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Transpose,Transpose,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/Transpose_1,Transpose,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.6/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.6/feed_forward/Mul,Mul,vaiml_par_27,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/feed_forward/Mul_1,Mul,vaiml_par_27,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/feed_forward/Sigmoid,Sigmoid,vaiml_par_27,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.6/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.6/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.6/ffn_norm/Add,Add,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/ffn_norm/Div,Div,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/ffn_norm/Mul_1,Mul,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/ffn_norm/Pow,Pow,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/ffn_norm/ReduceMean,ReduceMean,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/ffn_norm/Sqrt,Sqrt,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/operator_norm/Add,Add,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/operator_norm/Div,Div,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/operator_norm/Mul_1,Mul,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/operator_norm/Pow,Pow,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/operator_norm/ReduceMean,ReduceMean,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.6/operator_norm/Sqrt,Sqrt,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/Add,Add,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/Add_1,Add,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Conv,Conv,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Mul,Mul,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Mul_4,Mul,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Mul_5,Mul,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Slice,Slice,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Slice_1,Slice,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Slice_2,Slice,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Slice_3,Slice,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Transpose,Transpose,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/Transpose_1,Transpose,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.7/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.7/feed_forward/Mul,Mul,vaiml_par_31,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/feed_forward/Mul_1,Mul,vaiml_par_31,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/feed_forward/Sigmoid,Sigmoid,vaiml_par_31,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.7/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.7/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.7/ffn_norm/Add,Add,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/ffn_norm/Div,Div,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/ffn_norm/Mul_1,Mul,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/ffn_norm/Pow,Pow,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/ffn_norm/ReduceMean,ReduceMean,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/ffn_norm/Sqrt,Sqrt,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/operator_norm/Add,Add,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/operator_norm/Div,Div,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/operator_norm/Mul_1,Mul,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/operator_norm/Pow,Pow,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/operator_norm/ReduceMean,ReduceMean,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.7/operator_norm/Sqrt,Sqrt,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/Add,Add,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/Add_1,Add,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Conv,Conv,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Mul,Mul,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Mul_4,Mul,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Mul_5,Mul,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Slice,Slice,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Slice_1,Slice,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Slice_2,Slice,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Slice_3,Slice,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Transpose,Transpose,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/Transpose_1,Transpose,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/conv/in_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.8/conv/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.8/feed_forward/Mul,Mul,vaiml_par_35,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/feed_forward/Mul_1,Mul,vaiml_par_35,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/feed_forward/Sigmoid,Sigmoid,vaiml_par_35,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.8/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.8/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.8/ffn_norm/Add,Add,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/ffn_norm/Div,Div,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/ffn_norm/Mul_1,Mul,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/ffn_norm/Pow,Pow,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/ffn_norm/ReduceMean,ReduceMean,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/ffn_norm/Sqrt,Sqrt,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/operator_norm/Add,Add,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/operator_norm/Div,Div,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/operator_norm/Mul_1,Mul,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/operator_norm/Pow,Pow,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/operator_norm/ReduceMean,ReduceMean,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.8/operator_norm/Sqrt,Sqrt,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/Add,Add,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/Add_1,Add,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/feed_forward/Mul,Mul,vaiml_par_39,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/feed_forward/Mul_1,Mul,vaiml_par_39,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/feed_forward/Sigmoid,Sigmoid,vaiml_par_39,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/feed_forward/w1/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.9/feed_forward/w2/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.9/feed_forward/w3/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.9/ffn_norm/Add,Add,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/ffn_norm/Div,Div,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/ffn_norm/Mul_1,Mul,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/ffn_norm/Pow,Pow,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/ffn_norm/ReduceMean,ReduceMean,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/ffn_norm/Sqrt,Sqrt,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/operator_norm/Add,Add,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/operator_norm/Div,Div,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/operator_norm/Mul_1,Mul,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/operator_norm/Pow,Pow,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/operator_norm/ReduceMean,ReduceMean,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/operator_norm/Sqrt,Sqrt,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/layers.9/self_attn/Add,Add,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Add_1,Add,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Add_2,Add,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Concat,Concat,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Concat_1,Concat,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Expand,Expand,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Expand_1,Expand,vaiml_par_37,Supported
+/lm/layers.9/self_attn/IsNaN,IsNaN,vaiml_par_37,Supported
+/lm/layers.9/self_attn/MatMul,MatMul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/MatMul_1,MatMul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Mul,Mul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Mul_1,Mul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Mul_2,Mul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Mul_3,Mul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Mul_6,Mul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Mul_7,Mul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Neg,Neg,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Neg_1,Neg,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Reshape_3,Reshape,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Reshape_4,Reshape,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Reshape_5_new_reshape,Reshape,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Slice,Slice,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Slice_1,Slice,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Slice_2,Slice,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Slice_3,Slice,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Softmax,Softmax,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Transpose,Transpose,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Transpose_1,Transpose,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Transpose_2,Transpose,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Transpose_3,Transpose,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Transpose_4,Transpose,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Unsqueeze,Unsqueeze,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Unsqueeze_1,Unsqueeze,vaiml_par_37,Supported
+/lm/layers.9/self_attn/Where_3,Where,vaiml_par_37,Supported
+/lm/layers.9/self_attn/k_layernorm/Add,Add,vaiml_par_37,Supported
+/lm/layers.9/self_attn/k_layernorm/Div,Div,vaiml_par_37,Supported
+/lm/layers.9/self_attn/k_layernorm/Mul_1,Mul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/k_layernorm/Pow,Pow,vaiml_par_37,Supported
+/lm/layers.9/self_attn/k_layernorm/ReduceMean,ReduceMean,vaiml_par_37,Supported
+/lm/layers.9/self_attn/k_layernorm/Sqrt,Sqrt,vaiml_par_37,Supported
+/lm/layers.9/self_attn/k_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.9/self_attn/out_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.9/self_attn/q_layernorm/Add,Add,vaiml_par_37,Supported
+/lm/layers.9/self_attn/q_layernorm/Div,Div,vaiml_par_37,Supported
+/lm/layers.9/self_attn/q_layernorm/Mul_1,Mul,vaiml_par_37,Supported
+/lm/layers.9/self_attn/q_layernorm/Pow,Pow,vaiml_par_37,Supported
+/lm/layers.9/self_attn/q_layernorm/ReduceMean,ReduceMean,vaiml_par_37,Supported
+/lm/layers.9/self_attn/q_layernorm/Sqrt,Sqrt,vaiml_par_37,Supported
+/lm/layers.9/self_attn/q_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/layers.9/self_attn/v_proj/MatMul_2d_Q4,MatMulNBits,,Not supported. Check aie_unsupported_original_ops.
+/lm/rotary_emb/Cast,Cast,,Not supported. Check aie_unsupported_original_ops.
+/lm/rotary_emb/Concat,Concat,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/rotary_emb/Cos,Cos,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/rotary_emb/Mul,Mul,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/rotary_emb/Sin,Sin,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+/lm/rotary_emb/Unsqueeze,Unsqueeze,,Not supported. Check aie_unsupported_original_ops.
+=Reshape->answer_logits,Reshape,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+=Reshape->d1_hidden_2d,Reshape,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose,Transpose,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_1,Transpose,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_11,Transpose,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_13,Transpose,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_15,Transpose,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_17,Transpose,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_19,Transpose,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_21,Transpose,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_23,Transpose,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_25,Transpose,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_27,Transpose,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_29,Transpose,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_3,Transpose,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_31,Transpose,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_33,Transpose,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_35,Transpose,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_37,Transpose,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_39,Transpose,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_41,Transpose,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_5,Transpose,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_7,Transpose,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+Transpose_token_9,Transpose,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_101,Reshape,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1047,Reshape,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1051,Reshape,vaiml_par_39,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1070,Reshape,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1102,Reshape,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1123,Reshape,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1127,Reshape,vaiml_par_43,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1146,Reshape,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1178,Reshape,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1199,Reshape,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1203,Reshape,vaiml_par_47,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_122,Reshape,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1222,Reshape,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1254,Reshape,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_126,Reshape,vaiml_par_3,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1275,Reshape,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1279,Reshape,vaiml_par_51,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1315,Reshape,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1430,Reshape,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1434,Reshape,vaiml_par_55,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_145,Reshape,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1453,Reshape,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1485,Reshape,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1506,Reshape,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1510,Reshape,vaiml_par_59,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1529,Reshape,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1561,Reshape,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1582,Reshape,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1586,Reshape,vaiml_par_63,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1605,Reshape,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1637,Reshape,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1658,Reshape,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1662,Reshape,vaiml_par_67,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1698,Reshape,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_177,Reshape,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1813,Reshape,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1817,Reshape,vaiml_par_71,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1836,Reshape,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1868,Reshape,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1889,Reshape,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1893,Reshape,vaiml_par_75,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1912,Reshape,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1944,Reshape,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1965,Reshape,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1969,Reshape,vaiml_par_79,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_198,Reshape,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_1988,Reshape,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_202,Reshape,vaiml_par_7,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2020,Reshape,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2041,Reshape,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2045,Reshape,vaiml_par_83,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2081,Reshape,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2196,Reshape,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2200,Reshape,vaiml_par_87,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2219,Reshape,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2251,Reshape,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2272,Reshape,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2276,Reshape,vaiml_par_91,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2295,Reshape,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2327,Reshape,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2348,Reshape,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2352,Reshape,vaiml_par_95,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_238,Reshape,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2388,Reshape,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2503,Reshape,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2507,Reshape,vaiml_par_99,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2526,Reshape,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2558,Reshape,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2579,Reshape,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2583,Reshape,vaiml_par_103,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2602,Reshape,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2634,Reshape,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2655,Reshape,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2659,Reshape,vaiml_par_107,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2695,Reshape,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2810,Reshape,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2814,Reshape,vaiml_par_111,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2833,Reshape,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2865,Reshape,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2886,Reshape,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2890,Reshape,vaiml_par_115,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2909,Reshape,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2941,Reshape,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2962,Reshape,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_2966,Reshape,vaiml_par_119,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_357,Reshape,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_361,Reshape,vaiml_par_11,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_380,Reshape,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_412,Reshape,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_433,Reshape,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_437,Reshape,vaiml_par_15,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_456,Reshape,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_488,Reshape,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_509,Reshape,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_513,Reshape,vaiml_par_19,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_549,Reshape,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_664,Reshape,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_668,Reshape,vaiml_par_23,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_687,Reshape,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_69,Reshape,vaiml_par_0,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_719,Reshape,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_740,Reshape,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_744,Reshape,vaiml_par_27,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_763,Reshape,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_795,Reshape,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_816,Reshape,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_820,Reshape,vaiml_par_31,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_839,Reshape,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_871,Reshape,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_892,Reshape,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_896,Reshape,vaiml_par_35,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_a_932,Reshape,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_101,Reshape,vaiml_par_2,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1026,Reshape,vaiml_par_38,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1042,Reshape,vaiml_par_39,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1047,Reshape,vaiml_par_39,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1051,Reshape,vaiml_par_40,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1070,Reshape,vaiml_par_41,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1102,Reshape,vaiml_par_42,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1118,Reshape,vaiml_par_43,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1123,Reshape,vaiml_par_43,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1127,Reshape,vaiml_par_44,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1146,Reshape,vaiml_par_45,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_117,Reshape,vaiml_par_3,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1178,Reshape,vaiml_par_46,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1194,Reshape,vaiml_par_47,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1199,Reshape,vaiml_par_47,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1203,Reshape,vaiml_par_48,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_122,Reshape,vaiml_par_3,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1222,Reshape,vaiml_par_49,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1254,Reshape,vaiml_par_50,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_126,Reshape,vaiml_par_4,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1270,Reshape,vaiml_par_51,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1275,Reshape,vaiml_par_51,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1279,Reshape,vaiml_par_52,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1295_new_reshape,Reshape,vaiml_par_53,Supported
+d1r_b_1315_new_reshape,Reshape,vaiml_par_53,Supported
+d1r_b_1332_new_reshape,Reshape,vaiml_par_53,Supported
+d1r_b_1409,Reshape,vaiml_par_54,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1425,Reshape,vaiml_par_55,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1430,Reshape,vaiml_par_55,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1434,Reshape,vaiml_par_56,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_145,Reshape,vaiml_par_5,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1453,Reshape,vaiml_par_57,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1485,Reshape,vaiml_par_58,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1501,Reshape,vaiml_par_59,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1506,Reshape,vaiml_par_59,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1510,Reshape,vaiml_par_60,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1529,Reshape,vaiml_par_61,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1561,Reshape,vaiml_par_62,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1577,Reshape,vaiml_par_63,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1582,Reshape,vaiml_par_63,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1586,Reshape,vaiml_par_64,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1605,Reshape,vaiml_par_65,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1637,Reshape,vaiml_par_66,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1653,Reshape,vaiml_par_67,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1658,Reshape,vaiml_par_67,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1662,Reshape,vaiml_par_68,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1678_new_reshape,Reshape,vaiml_par_69,Supported
+d1r_b_1698_new_reshape,Reshape,vaiml_par_69,Supported
+d1r_b_1715_new_reshape,Reshape,vaiml_par_69,Supported
+d1r_b_177,Reshape,vaiml_par_6,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1792,Reshape,vaiml_par_70,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1808,Reshape,vaiml_par_71,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1813,Reshape,vaiml_par_71,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1817,Reshape,vaiml_par_72,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1836,Reshape,vaiml_par_73,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1868,Reshape,vaiml_par_74,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1884,Reshape,vaiml_par_75,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1889,Reshape,vaiml_par_75,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1893,Reshape,vaiml_par_76,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1912,Reshape,vaiml_par_77,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_193,Reshape,vaiml_par_7,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1944,Reshape,vaiml_par_78,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1960,Reshape,vaiml_par_79,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1965,Reshape,vaiml_par_79,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1969,Reshape,vaiml_par_80,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_198,Reshape,vaiml_par_7,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_1988,Reshape,vaiml_par_81,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_202,Reshape,vaiml_par_8,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2020,Reshape,vaiml_par_82,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2036,Reshape,vaiml_par_83,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2041,Reshape,vaiml_par_83,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2045,Reshape,vaiml_par_84,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2061_new_reshape,Reshape,vaiml_par_85,Supported
+d1r_b_2081_new_reshape,Reshape,vaiml_par_85,Supported
+d1r_b_2098_new_reshape,Reshape,vaiml_par_85,Supported
+d1r_b_2175,Reshape,vaiml_par_86,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_218_new_reshape,Reshape,vaiml_par_9,Supported
+d1r_b_2191,Reshape,vaiml_par_87,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2196,Reshape,vaiml_par_87,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2200,Reshape,vaiml_par_88,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2219,Reshape,vaiml_par_89,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2251,Reshape,vaiml_par_90,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2267,Reshape,vaiml_par_91,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2272,Reshape,vaiml_par_91,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2276,Reshape,vaiml_par_92,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2295,Reshape,vaiml_par_93,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2327,Reshape,vaiml_par_94,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2343,Reshape,vaiml_par_95,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2348,Reshape,vaiml_par_95,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2352,Reshape,vaiml_par_96,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2368_new_reshape,Reshape,vaiml_par_97,Supported
+d1r_b_2388_new_reshape,Reshape,vaiml_par_97,Supported
+d1r_b_238_new_reshape,Reshape,vaiml_par_9,Supported
+d1r_b_2405_new_reshape,Reshape,vaiml_par_97,Supported
+d1r_b_2482,Reshape,vaiml_par_98,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2498,Reshape,vaiml_par_99,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2503,Reshape,vaiml_par_99,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2507,Reshape,vaiml_par_100,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2526,Reshape,vaiml_par_101,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2558,Reshape,vaiml_par_102,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_255_new_reshape,Reshape,vaiml_par_9,Supported
+d1r_b_2574,Reshape,vaiml_par_103,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2579,Reshape,vaiml_par_103,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2583,Reshape,vaiml_par_104,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2602,Reshape,vaiml_par_105,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2634,Reshape,vaiml_par_106,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2650,Reshape,vaiml_par_107,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2655,Reshape,vaiml_par_107,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2659,Reshape,vaiml_par_108,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2675_new_reshape,Reshape,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2695_new_reshape,Reshape,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2712_new_reshape,Reshape,vaiml_par_109,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2789,Reshape,vaiml_par_110,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2805,Reshape,vaiml_par_111,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2810,Reshape,vaiml_par_111,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2814,Reshape,vaiml_par_112,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2833,Reshape,vaiml_par_113,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2865,Reshape,vaiml_par_114,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2881,Reshape,vaiml_par_115,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2886,Reshape,vaiml_par_115,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2890,Reshape,vaiml_par_116,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2909,Reshape,vaiml_par_117,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2941,Reshape,vaiml_par_118,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2957,Reshape,vaiml_par_119,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2962,Reshape,vaiml_par_119,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_2966,Reshape,vaiml_par_120,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_336,Reshape,vaiml_par_10,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_352,Reshape,vaiml_par_11,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_357,Reshape,vaiml_par_11,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_361,Reshape,vaiml_par_12,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_380,Reshape,vaiml_par_13,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_412,Reshape,vaiml_par_14,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_428,Reshape,vaiml_par_15,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_433,Reshape,vaiml_par_15,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_437,Reshape,vaiml_par_16,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_456,Reshape,vaiml_par_17,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_488,Reshape,vaiml_par_18,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_504,Reshape,vaiml_par_19,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_509,Reshape,vaiml_par_19,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_513,Reshape,vaiml_par_20,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_529_new_reshape,Reshape,vaiml_par_21,Supported
+d1r_b_549_new_reshape,Reshape,vaiml_par_21,Supported
+d1r_b_566_new_reshape,Reshape,vaiml_par_21,Supported
+d1r_b_643,Reshape,vaiml_par_22,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_659,Reshape,vaiml_par_23,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_664,Reshape,vaiml_par_23,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_668,Reshape,vaiml_par_24,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_687,Reshape,vaiml_par_25,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_69,Reshape,vaiml_par_1,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_719,Reshape,vaiml_par_26,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_735,Reshape,vaiml_par_27,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_740,Reshape,vaiml_par_27,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_744,Reshape,vaiml_par_28,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_763,Reshape,vaiml_par_29,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_795,Reshape,vaiml_par_30,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_811,Reshape,vaiml_par_31,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_816,Reshape,vaiml_par_31,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_820,Reshape,vaiml_par_32,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_839,Reshape,vaiml_par_33,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_871,Reshape,vaiml_par_34,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_887,Reshape,vaiml_par_35,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_892,Reshape,vaiml_par_35,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_896,Reshape,vaiml_par_36,Fall back to CPU. Subgraph above max number of subgraphs
+d1r_b_912_new_reshape,Reshape,vaiml_par_37,Supported
+d1r_b_932_new_reshape,Reshape,vaiml_par_37,Supported
+d1r_b_949_new_reshape,Reshape,vaiml_par_37,Supported
