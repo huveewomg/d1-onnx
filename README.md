@@ -62,8 +62,7 @@ In our testing (SDK 1.8.0, the tested quantized decoder graphs, bare-EP path), t
 0.2 ms theoretical NPU budget measures hundreds of milliseconds: the quantized matrix math does
 not reach the DPU on the tested path. Encoder-style fp32 graphs in the same flow DO accelerate
 (19.2× here; nomic control 33.5 ms NPU vs 79 ms CPU). Other SDK versions or zoo-validated
-models may behave differently. Encoder-like
-graphs in the generic flow DO accelerate (19.2× here; a nomic control: 33.5 ms NPU vs 79 ms CPU).
+models may behave differently.
 
 ## Files
 
