@@ -44,7 +44,7 @@ cache-free, fixed-shape, verified 1:1 against the official checkpoint.
 |---|---|---|---|
 | Vision encoder (SigLIP2-400M, 1 tile = 256 tokens) | `d1-3B_vision_tile512.onnx` | **378 ms / tile on NPU** (19.2× vs CPU) | single fixed-shape graph; exotic ops constant-folded away |
 | Text decision, short states | `d1-3B_text_int8_seq128.onnx` (input_ids input) | **537 ms** (dynamic int8, CPU) | fp32 twin: 1750 ms; int8 keeps decisions + argmax, probs drift ~0.03-0.1 |
-| Text decision with image embeds | `d1-3B_embeds_pass_seq512.onnx` (inputs_embeds input) | **4.7 s** (CPU fp32, 512-tok window) | NPU-vision output merged in host-side; int8 variant planned for v1.1 |
+| Text decision with image embeds | fp32: `d1-3B_embeds_pass_seq512.onnx` · int8: `d1_embeds_int8_seq512.onnx` (inputs_embeds input, 512-tok window) | **int8: 3.2–4.6 s vs fp32: 9.4–11.3 s** (CPU, re-measured 2026-10-09 on a loaded machine; release-day idle-machine fp32 measured 4.7 s — absolute numbers are machine-state dependent) | NPU-vision output merged in host-side. int8 (built with the text-int8 recipe: rank-2 wrap, fp32 head excluded) keeps the decision — cats A/B "two" @0.9754 vs fp32 @0.9849 (−1.0 pp confidence) |
 | Text decoder on NPU | — | CPU-speed | see "NPU gating" below |
 
 ## The NPU gating finding
