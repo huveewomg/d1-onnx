@@ -134,8 +134,12 @@ Requirements: Python 3.12, `onnxruntime>=1.30`, `transformers>=5.19`; for the NP
 3. **NaFlex needs the dynamo exporter** (TorchScript chokes on its reshapes) and the
    positional-embedding interpolation must be **constant-folded for fixed tiles** or the NPU
    compiler segfaults on the `Resize`/`ScatterND`/`GatherND` cluster.
-4. **VAIML model cache is effectively write-only** (SDK 1.8.0): fp32 graphs fail fatally on
-   reload; others recompile silently (~50 min per process). Compile once per session.
+4. **VAIML model cache (SDK 1.8.0)** — with default cache settings the cache is wasted: every
+   fresh process recompiles (~35-50 min for the int8 text graph). Set provider options
+   `cache_dir` + `cache_key` + `enable_cache_file_io_in_mem="0"` and the behavior is what you
+   expect: compile once, then fresh-process sessions load in seconds (verified: 2125s → 2.9s,
+   zero cache regeneration). The fp32 (DPU-placed) graph still fails fatally on large-`.rai`
+   cache reload — tracked upstream as [RyzenAI-SW#405](https://github.com/amd/RyzenAI-SW/issues/405).
 5. **`use_cache=False`** — LFM2's cache layer rejects probe calls on attention-only layouts.
 
 ## Observed behavior (from hands-on use)
