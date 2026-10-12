@@ -16,9 +16,13 @@ tags:
 
 # d1-3B — ONNX single-pass port (NPU-friendly)
 
-**d1-3B image decisions with AMD XDNA2-accelerated vision — to our knowledge the first d1 execution on AMD NPU silicon (XDNA2) — verified against the official checkpoint.** The text leg runs on CPU (see the table). A parallel browser port exists: [onnx-community/d1-3B-ONNX](https://huggingface.co/onnx-community/d1-3B-ONNX) (Transformers.js/WebGPU, same readout approach, published the same week — credit to them for the browser port and the conversion methodology). On Ryzen AI NPU, the two ports behave the same way and neither reaches the DPU for the text decoder as-shipped: graphs carrying generic quantized-matmul ops (`MatMulInteger`/`MatMulNBits`) fall back to CPU, and the fp32 route hits either monolithic-graph inefficiency or, for NaFlex vision graphs, a compiler segfault — the exact issues dissected in the gating forensics below, this repo's novel contribution alongside the NPU-compiled vision graph (which resolves them by constant-folding the dynamic geometry).
+**d1-3B image decisions with AMD XDNA2-accelerated vision — to our knowledge the first d1 execution on AMD NPU silicon (XDNA2) — verified against the official checkpoint.** The text leg runs on CPU (see the table). A parallel browser port exists: [onnx-community/d1-3B-ONNX](https://huggingface.co/onnx-community/d1-3B-ONNX) (Transformers.js/WebGPU, same readout approach, published the same week — credit to them for the browser port and the conversion methodology).
 
-**In one sentence: an AMD XDNA2 deployment study and ONNX implementation of d1-3B — fixed-geometry vision acceleration with measured silicon evidence, reference comparisons, and documented quantized-decoder fallback behavior.**
+On Ryzen AI NPU, both ports behave the same way and neither reaches the DPU for the text decoder as-shipped:
+graphs carrying generic quantized-matmul ops (`MatMulInteger`/`MatMulNBits`) fall back to CPU, and the fp32
+route hits either monolithic-graph inefficiency or, for NaFlex vision graphs, a compiler segfault — dissected
+in the gating forensics below (this repo's novel contribution) alongside the NPU-compiled vision graph, which
+resolves them by constant-folding the dynamic geometry.
 
 Liquid's d1 decision models answer typed questions in **one forward pass** (no output tokens):
 yes/no (`noul`), pick-from-options (`choice`), ordered rubrics (`score`), with text, JSON or
@@ -55,12 +59,13 @@ AMD's VitisAI EP ships fused quantized NPU kernels (`waic_target_qhw4`) that **o
 exact md5 signatures of models in AMD's own zoo** (`PHI_7B_4BIT`, `QWEN3_0.6B_8BIT`, ...; decoded
 from `vaip_config.json`'s `mepTable`). Arbitrary models fall to the generic compiler flow where
 `MatMulInteger`/`MatMulNBits` are "Not supported" → quantized matrix math silently runs on CPU,
-even when the partition report claims 100% of GOPs placed. Requesting the zoo target explicitly
-loads but binds no AIE (`XAie_SetIOBackend: Invalid backend request`).
+even when the partition report claims 100% of GOPs placed
+([RyzenAI-SW#406](https://github.com/amd/RyzenAI-SW/issues/406) — our report).
+Requesting the zoo target explicitly loads but binds no AIE (`XAie_SetIOBackend: Invalid backend request`).
 
-In our testing (SDK 1.8.0, the tested quantized decoder graphs, bare-EP path), the 3.1B model's
-0.2 ms theoretical NPU budget measures hundreds of milliseconds: the quantized matrix math does
-not reach the DPU on the tested path. Encoder-style fp32 graphs in the same flow DO accelerate
+In our testing (SDK 1.8.0, the tested quantized decoder graphs, bare-EP path), the decoder's arithmetic maps
+to ~0.2 ms on the DPU by the SDK's own GOP accounting, yet the same graphs measure hundreds of milliseconds:
+the quantized matrix math does not reach the DPU on the tested path. Encoder-style fp32 graphs in the same flow DO accelerate
 (19.2× here; nomic control 33.5 ms NPU vs 79 ms CPU). Other SDK versions or zoo-validated
 models may behave differently.
 
@@ -83,6 +88,9 @@ assets/     cat-demo image used by the end-to-end check (COCO 39769)
 d1-3B_text_int8_seq128.onnx     input_ids (1,128) -> answer_logits (1,1,128000)   [int8, 537 ms]
 d1-3B_text_pass_seq128.onnx     fp32 anchor of the same graph (shared canonical weight set)
 d1-3B_embeds_pass_seq512.onnx   inputs_embeds (1,512,2048) -> answer_logits; shell that shares the fp32 weight files
+d1_embeds_int8_seq512.onnx      int8 quantization of the embeds-pass graph — image-path text leg;
+                                forked fp32 head (readout exact); CATS A/B: 'two' @0.9754 vs fp32 @0.9849;
+                                text leg 2.4-3.1x faster; carries its own merged .onnx.data (2.7 GB)
 d1-3B_vision_tile512.onnx       pixel_values (1,1024,768) -> image_embeds (256,2048)  [NPU-compiled, 19.2x]
 ```
 
@@ -106,21 +114,10 @@ python try/try_d1.py --state "I was charged twice this month, please refund one 
 
 ## Reproduce
 
-The conversion + verification tooling (export pipeline, parity/benchmark harness, `try_d1.py`, reference tensors) lives in the companion GitHub repo: **github.com/huveewomg/d1-onnx**.
-
-Demo image: `assets/cats.jpg` (COCO 39769).
-
-```bash
-hf download huveewomg/d1-3B-ONNX --local-dir models
-
-# text-only decision (CPU; ONNX graphs + Hub tokenizer suffice — no torch checkpoint)
-python try/try_d1.py --state "I was charged twice this month, please refund one of them." \
-    --type noul --instructions "Is the customer asking for a refund?"
-
-# image decision through the NPU
-python try/try_d1.py --image assets/cats.jpg --type choice \
-    --instructions "How many cats are there?" --criteria "one=One,two=Two,more=Three or more"
-```
+Demo image: `assets/cats.jpg` (COCO 39769). The commands above run it directly: pass
+`--image assets/cats.jpg --type choice --instructions "How many cats are there?"
+--criteria "one=One,two=Two,more=Three or more"` for the end-to-end demo
+(the torch-native reference probabilities shown in the verified table come from `verify/`).
 
 Requirements: Python 3.12, `onnxruntime>=1.30`, `transformers>=5.19`; for the NPU path: Ryzen AI Software 1.8.0 (VitisAI EP) with an XDNA2 NPU (Ryzen AI 300 series or AI Max).
 
@@ -153,6 +150,22 @@ Same image (lobster + llama, from [ollama.ac.cn](https://ollama.ac.cn/), not red
 
 Both right — the `sea` qualifier correctly excludes the llama from the count.
 Built-in reproducible demo: `assets/cats.jpg`.
+
+## Revision notes
+
+- **2026-10-09 (lever 1, 52eeb26)** — added the int8 embeds-pass graph: the image-path text
+  leg quantized with the identical recipe as the text-int8 graph (rank-2 wrap, forked fp32
+  head excluded from quantization). Carries its own merged `d1_embeds_int8_seq512.onnx.data`
+  (2.7 GB) — all external references resolve against it. Decision check: cats A/B
+  'two' @0.9754 (fp32 anchor: 'two' @0.9849).
+
+- **2026-10-09 (fa3184e)** — fixed the int8 graph's external-data references: 3 Constant
+  node-attribute tensors still pointed at a pre-pack filename (`d1-3B_int8e_seq128.onnx.data`)
+  that was never uploaded, so a fresh download of `onnx/d1-3B_text_int8_seq128.onnx` failed
+  ONNX Runtime external-data validation at session creation. Only the 3 location strings were
+  rewritten; the referenced bytes were already inside `d1-3B_text_int8_seq128.onnx.data`
+  (tail offsets ending exactly at its size), verified by clean-dir load + a full VAIML session
+  run. The original pinned revision (`ced5f5a17d6f…`) is unchanged.
 
 ## License
 
